@@ -13,9 +13,13 @@
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="{{ asset('landing-page/assets/images/favicon.ico') }}" type="image/x-icon">
     <!--====== Google Fonts ======-->
-    <link
+    {{-- <link
         href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&family=Oswald:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+        rel="stylesheet"> --}}
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="font/CS-Interface/style.css" />
 
     <!--====== Flaticon ======-->
     <link rel="stylesheet" href="{{ asset('landing-page/assets/css/flaticon.min.css') }}">
@@ -35,6 +39,221 @@
 </head>
 
 <body>
+
+
+    <!-- Modal 1 -->
+    <div class="modal fade" id="modalBer" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Berorientasi Pelayanan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p> Komitmen memberikan pelayanan prima demi kepuasan masyarakat / Pengguna Layanan.</p>
+                    <ul class="list-unstyled">
+                        <li> Panduan Perilaku :
+                            <ul>
+                                <li>1. Memahami dan memenuhi kebutuhan, masyarakat</li>
+                                <li>2. Ramah, cekatan, solutif dan dapat diandalkan</li>
+                                <li>3. Melakukan perbaikan tiada henti</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 2 -->
+    <div class="modal fade" id="modalAkuntabel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Akuntabel</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p> Bertanggung jawab atas kepercayaan yang diberikan.</p>
+                    <ul class="list-unstyled">
+                        <li> Panduan Perilaku :
+                            <ul>
+                                <li>1. Melaksanakan tugas dengan jujur, bertanggung jawab, cermat, disiplin dan
+                                    berintegritas tinggi </li>
+                                <li>2. Menggunakan kekayaan dan barang milik negara secara bertanggung jawab, efektif
+                                    dan efisien</li>
+                                <li>3. Tidak menyalahgunakan kewenangan jabatan</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 3 -->
+    <div class="modal fade" id="modalKompeten" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Kompeten</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p> Terus belajar dan mengembangkan kapabilitas.</p>
+                    <ul class="list-unstyled">
+                        <li> Panduan Perilaku :
+                            <ul>
+                                <li>1. Meningkatkan kompetensi diri untuk menjawab tantangan yang selalu berubah</li>
+                                <li>2. Membantu orang lain belajar</li>
+                                <li>3. Melaksanakan tugas dengan kualitas terbaik</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 4 -->
+    <div class="modal fade" id="modalHarmonis" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Harmonis</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p> Sikap saling peduli dan menghargai perbedaan.</p>
+                    <ul class="list-unstyled">
+                        <li> Panduan Perilaku :
+                            <ul>
+                                <li>1. Menghargai setiap orang apapun latar belakangnya.</li>
+                                <li>2. Suka menolong orang lain.</li>
+                                <li>3. Membangun lingkungan kerja yang kondusif.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 5 -->
+    <div class="modal fade" id="modalLoyal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Loyal</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p> Berdedikasi dan mengutamakan kepentingan Bangsa dan Negara.</p>
+                    <ul class="list-unstyled">
+                        <li> Panduan Perilaku :
+                            <ul>
+                                <li>1. Memegang teguh ideologi Pancasila dan UUD Negara RI tahun 1945.</li>
+                                <li>2. Setia kepada NKRI dan pemerintahan yang sah.</li>
+                                <li>3. Menjaga nama baik sesama ASN, Pimpinan, Instansi dan Negara, serta menjaga
+                                    rahasia jabatan dan negara.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 6 -->
+    <div class="modal fade" id="modalAdaptif" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Adaptif</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p> Terus berinovasi dan antusias dalammenggerakkan serta menghadapi perubahan.</p>
+                    <ul class="list-unstyled">
+                        <li> Panduan Perilaku :
+                            <ul>
+                                <li>1. Cepat menyesuaikan diri menghadapi perubahan.</li>
+                                <li>2. Terus berinovasi dan mengembangkan kreativitas.</li>
+                                <li>3. Bertindak proaktif.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 7 -->
+    <div class="modal fade" id="modalKolaboratif" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Kolaboratif</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p> Membangun kerja sama yang sinergis antar ASN.</p>
+                    <ul class="list-unstyled">
+                        <li> Panduan Perilaku :
+                            <ul>
+                                <li>1. Memberi kesempatan kepada berbagai pihak untuk berkontribusi</li>
+                                <li>2. Terbuka dalam bekerja sama untuk menghasilkan nilai tambah.</li>
+                                <li>3. Menggerakkan pemanfaatan berbagai sumber daya untuk tujuan bersama.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="page-wrapper">
 
         <!-- Preloader -->
@@ -57,13 +276,13 @@
                                             src="landing-page/assets/images/Logo_BERAKHLAK-comp.png" alt="Logo"
                                             title="Logo"></a></div>
                             </div>
-                            <div class="header-contact">
+                            {{-- <div class="header-contact">
                                 <i class="flaticon-call"></i>
                                 <div class="content">
                                     <h5>Phone</h5>
                                     <h6><a href="callto:+012455689695">+012 ) 455 - 689 695</a></h6>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
 
                         <div class="nav-outer clearfix">
@@ -83,7 +302,7 @@
                                     <ul class="navigation onepage clearfix">
                                         <li><a href="#home">Home</a></li>
                                         <li><a href="#about">Tentang</a></li>
-                                        <li><a href="#content">Konten</a></li>
+                                        {{-- <li><a href="#content">Konten</a></li> --}}
                                         {{-- <li class="dropdown"><a href="#">sections</a>
                                             <ul>
                                                 <li><a href="#feature">features</a></li>
@@ -104,18 +323,18 @@
                         <!-- Menu Button -->
                         <div class="menu-icons">
                             <!-- Nav Search -->
-                            <div class="nav-search py-15">
+                            {{-- <div class="nav-search py-15">
                                 <button class="fa fa-search"></button>
                                 <form action="#" class="hide">
                                     <input type="text" placeholder="Search" class="searchbox" required="">
                                     <button type="submit" class="searchbutton fa fa-search"></button>
                                 </form>
-                            </div>
+                            </div> --}}
 
                             <!-- menu Btn -->
                             <div class="menu-btn">
                                 {{-- <a href="contact.html" class="theme-btn br-5">Get a Quote</a> --}}
-                                <a href="{{ route('login') }}" class="btn btn-primary mb-2">Login</a>
+                                <a href="{{ route('login') }}" class="btn btn-danger">Login</a>
                             </div>
                         </div>
                     </div>
@@ -132,17 +351,19 @@
                         <div class="hero-content my-220 rmy-100">
                             <span class="sub-title mb-15 wow fadeInUp delay-0-2s">Selamat Datang di</span>
                             <h1 class="mb-30 wow fadeInUp delay-0-4s">Jawa Timur <span
-                                    style="color: #9E2029ff; text:bold">BerAKHLAK.</span> </h1>
-                            <p class="wow fadeInUp delay-0-6s">pretium convallis lacinia. Quisque ac eros urna. Mauris
-                                eu molestie odio. Nullam id consectetur nibh,</p>
+                                    style="color: #9E2029ff; font-weight: 900">BerAKHLAK.</span> </h1>
+                            <p class="wow fadeInUp delay-0-6s">Berorientasi Pelayanan, Akuntabel, Kompeten, Harmonis,
+                                <br>
+                                Loyal, Adaptif, dan Kolaboratif.
+                            </p>
                             <div class="hero-btn mt-60 wow fadeInUp delay-0-8s">
-                                <a href="about.html" class="theme-btn">Discover More</a>
+                                <a href="#about" class="theme-btn">Discover More</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 align-self-end">
                         <div class="hero-right-images text-lg-right wow fadeInUp delay-0-2s">
-                            <img src="landing-page/assets/images/hero/hero-right.png" alt="Hero">
+                            <img src="landing-page/assets/images/hero/hero-right2.png" alt="Hero">
                         </div>
                     </div>
                 </div>
@@ -161,60 +382,91 @@
                     <div class="col-lg-7">
                         <div class="section-title text-center mb-60">
                             {{-- <span class="sub-title mb-15">Our Pricing plan</span> --}}
-                            <h2><span>BerAKHLAK</span></h2>
+                            <h1><span>BerAKHLAK</span></h1>
                         </div>
                     </div>
+                    <p class="text-center"> Lahirnya core values BerAKHLAK disebabkan oleh adanya perbedaan
+                        penerjemahan terhadap
+                        nilai-nilai dasar serta kode etik dan kode perilaku ASN yang tertuang pada Undang-Undang
+                        Nomor 5 Tahun 2014 tentang Aparatur Sipil Negara. Oleh karena itu, Kementerian
+                        Pendayagunaan Aparatur Negara dan Reformasi Birokrasi RI menetapkan core values baru untuk
+                        menciptakan persepsi yang sama atas nilai-nilai dasar ASN. Core values BerAKHLAK juga
+                        merupakan penggabungan dan pengerucutan nilai-nilai ASN yang ada diberbagai Instansi
+                        Pemerintah di Indonesia.
+                    </p>
+                    <p class="text-center"> Dengan adanya core values ASN BerAKHLAK, diharapkan setiap ASN
+                        baik di instansi pusat maupun daerah memiliki semboyan dan semangat yang
+                        sama dalam memberikan pelayanan kepada masyarakat. ASN jangan lagi
+                        minta untuk dilayani melainkan memberikan pelayanan yang prima dalam
+                        membantu masyarakat. Harapan ini juga didukung dengan diresmikannya
+                        employer branding ASN “Bangga Melayani Bangsa” .
+                    </p>
+                    <p class="text-center">
+                        Dengan ditetapkannya core values BerAKHLAK, akan menguatkan
+                        budaya kerja ASN yang profesional dalam melayani masyarakat. Orientasi
+                        pelayanan yang berkualitas dan profesional harus dimaknai dengan baik oleh
+                        setiap ASN. Tidak hanya sekadar menjadi jargon melainkan harus diamalkan
+                        dan ditujukan untuk kemajuan bangsa. ASN harus bisa mendobrak stigma
+                        negatif masyarakat terkait adanya praktik pungli untuk mempercepat proses
+                        layanan yang diberikan oleh Instansi pemerintah. Ketika ASN terbiasa memberikan pelayanan yang
+                        baik dan sesuai prosedur, praktik korupsi akan terhindarkan.
+                    </p>
                 </div>
                 <div class="row justify-content-center mb-110 rmb-70">
-                    {{-- <div class="col-lg-4 col-md-6">
-                        <div class="pricing-item wow fadeInUp delay-0-2s">
-                            <h3>Basic Plan</h3>
-                            <span class="license">Extended License</span>
-                            <span class="price">29</span>
-                            <ul class="list-style-one">
-                                <li>10 Pages Responsive Website</li>
-                                <li>Customer Experience</li>
-                                <li>Professional staff training</li>
-                            </ul>
-                            <a href="contact.html" class="theme-btn style-two">Get License</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="pricing-item wow fadeInUp delay-0-4s">
-                            <h3>Standard</h3>
-                            <span class="license">Extended License</span>
-                            <span class="price">59</span>
-                            <ul class="list-style-one">
-                                <li>10 Pages Responsive Website</li>
-                                <li>Customer Experience</li>
-                                <li>Professional staff training</li>
-                            </ul>
-                            <a href="contact.html" class="theme-btn style-two">Get License</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="pricing-item wow fadeInUp delay-0-6s">
-                            <h3>Premium</h3>
-                            <span class="license">Extended License</span>
-                            <span class="price">99</span>
-                            <ul class="list-style-one">
-                                <li>10 Pages Responsive Website</li>
-                                <li>Customer Experience</li>
-                                <li>Professional staff training</li>
-                            </ul>
-                            <a href="contact.html" class="theme-btn style-two">Get License</a>
-                        </div>
-                    </div> --}}
+
                 </div>
-                <div class="video-wrap bgs-cover p-100 br-10"
-                    style="background-image: url(landing-page/assets/images/background/thumbnail-youtube.jpg);">
-                    <div class="section-title text-center text-white mb-100 wow fadeInUp delay-0-2s">
+
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <div class="video-wrap bgs-cover p-100 br-10">
+                        <div class="carousel-item active">
+                            {{-- <div class="video-wrap bgs-cover p-100 br-10 " --}}
+                            {{-- style="background-image: url(landing-page/assets/images/background/thumbnail-youtube.jpg);"> --}}
+                            <div class="section-title text-center text-white mb-100 wow fadeInUp delay-0-2s">
+                                <span class="sub-title mb-15">Sambutan Presiden RI</span>
+                                <h2>Launching <span> Core Value</span> dan <span>Employee Value Proposition</span> .
+                                </h2>
+                            </div>
+                            <a href="https://www.youtube.com/watch?v=_37x5ViniBo&t=193s"
+                                class="mfp-iframe video-play"><i class="fas fa-play"></i></a>
+                            {{-- </div> --}}
+                        </div>
+                        <div class="carousel-item">
+                            {{-- <div class="video-wrap bgs-cover p-100 br-10 " --}}
+                            {{-- style="background-image: url(landing-page/assets/images/background/thumbnail-youtube.jpg);"> --}}
+                            <div class="section-title text-center text-white mb-100 wow fadeInUp delay-0-2s">
+                                {{-- <span class="sub-title mb-15">Sambutan Presiden RI</span> --}}
+                                <h2>ASN <span> BerAKHLAK</span> Provinsi Jawa Timur</span>
+                                </h2>
+                            </div>
+                            <a href="https://www.youtube.com/watch?v=_37x5ViniBo&t=193s"
+                                class="mfp-iframe video-play"><i class="fas fa-play"></i></a>
+                            {{-- </div> --}}
+                        </div>
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        </ol>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                        data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                        data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                {{-- <div class="video-wrap bgs-cover p-100 br-10 "
+        style="background-image: url(landing-page/assets/images/background/thumbnail-youtube.jpg);">
+        <div class="section-title text-center text-white mb-100 wow fadeInUp delay-0-2s">
                         <span class="sub-title mb-15">Sambutan Presiden RI</span>
                         <h2>Launching <span> Core Value</span> dan <span>Employee Value Proposition</span> .</h2>
                     </div>
                     <a href="https://www.youtube.com/watch?v=_37x5ViniBo&t=193s" class="mfp-iframe video-play"><i
                             class="fas fa-play"></i></a>
-                </div>
+                </div> --}}
             </div>
             <img class="triangle-shape" src="landing-page/assets/images/shapes/triangle.png" alt="Shape">
             <img class="half-circle-shape" src="landing-page/assets/images/shapes/half-circle.png" alt="Shape">
@@ -247,71 +499,77 @@
                         <div class="col-xl-3 col-md-6">
                             <div class="service-item wow fadeInUp delay-0-2s">
                                 <div class="icon">
-                                    <img src="landing-page/assets/images/services/icon1.png" alt="Icon">
+                                    {{-- <img src="landing-page/assets/images/services/icon1.png" alt="Icon"> --}}
                                 </div>
                                 <h4>Berorientasi Pelayanan
                                 </h4>
-                                <a href="services.html" class="read-more">Explore <i
-                                        class="fas fa-long-arrow-alt-right"></i></a>
+                                <a type="button" class="read-more" data-toggle="modal"
+                                    data-target="#modalBer">Explore <i class="fas fa-long-arrow-alt-right"></i></a>
+                                <!-- Button trigger modal -->
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-6">
                             <div class="service-item wow fadeInUp delay-0-4s">
                                 <div class="icon">
-                                    <img src="landing-page/assets/images/services/icon2.png" alt="Icon">
+                                    {{-- <img src="landing-page/assets/images/services/icon2.png" alt="Icon"> --}}
                                 </div>
                                 <h4>Akuntabel</h4>
-                                <a href="services.html" class="read-more">Explore <i
+                                <a type="button" class="read-more" data-toggle="modal"
+                                    data-target="#modalAkuntabel">Explore <i
                                         class="fas fa-long-arrow-alt-right"></i></a>
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-6">
                             <div class="service-item wow fadeInUp delay-0-6s">
                                 <div class="icon">
-                                    <img src="landing-page/assets/images/services/icon3.png" alt="Icon">
+                                    {{-- <img src="landing-page/assets/images/services/icon3.png" alt="Icon"> --}}
                                 </div>
                                 <h4>Kompeten</h4>
-                                <a href="services.html" class="read-more">Explore <i
+                                <a type="button" class="read-more" data-toggle="modal"
+                                    data-target="#modalKompeten">Explore <i
                                         class="fas fa-long-arrow-alt-right"></i></a>
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-6">
                             <div class="service-item wow fadeInUp delay-0-8s">
                                 <div class="icon">
-                                    <img src="landing-page/assets/images/services/icon4.png" alt="Icon">
+                                    {{-- <img src="landing-page/assets/images/services/icon4.png" alt="Icon"> --}}
                                 </div>
                                 <h4>Harmonis</h4>
-                                <a href="services.html" class="read-more">Explore <i
+                                <a type="button" class="read-more" data-toggle="modal"
+                                    data-target="#modalHarmonis">Explore <i
                                         class="fas fa-long-arrow-alt-right"></i></a>
                             </div>
                         </div>
                         <div class="col-xl-4 col-md-6">
                             <div class="service-item wow fadeInUp delay-0-10s">
                                 <div class="icon">
-                                    <img src="landing-page/assets/images/services/icon4.png" alt="Icon">
+                                    {{-- <img src="landing-page/assets/images/services/icon4.png" alt="Icon"> --}}
                                 </div>
                                 <h4>Loyal</h4>
-                                <a href="services.html" class="read-more">Explore <i
-                                        class="fas fa-long-arrow-alt-right"></i></a>
+                                <a type="button" class="read-more" data-toggle="modal"
+                                    data-target="#modalLoyal">Explore <i class="fas fa-long-arrow-alt-right"></i></a>
                             </div>
                         </div>
                         <div class="col-xl-4 col-md-6">
                             <div class="service-item wow fadeInUp delay-0-12s">
                                 <div class="icon">
-                                    <img src="landing-page/assets/images/services/icon4.png" alt="Icon">
+                                    {{-- <img src="landing-page/assets/images/services/icon4.png" alt="Icon"> --}}
                                 </div>
                                 <h4>Adaptif</h4>
-                                <a href="services.html" class="read-more">Explore <i
+                                <a type="button" class="read-more" data-toggle="modal"
+                                    data-target="#modalAdaptif">Explore <i
                                         class="fas fa-long-arrow-alt-right"></i></a>
                             </div>
                         </div>
                         <div class="col-xl-4 col-md-6">
                             <div class="service-item wow fadeInUp delay-0-14s">
                                 <div class="icon">
-                                    <img src="landing-page/assets/images/services/icon4.png" alt="Icon">
+                                    {{-- <img src="landing-page/assets/images/services/icon4.png" alt="Icon"> --}}
                                 </div>
                                 <h4>Kolaboratif</h4>
-                                <a href="services.html" class="read-more">Explore <i
+                                <a type="button" class="read-more" data-toggle="modal"
+                                    data-target="#modalKolaboratif">Explore <i
                                         class="fas fa-long-arrow-alt-right"></i></a>
                             </div>
                         </div>
@@ -321,6 +579,128 @@
         </section>
         <!-- Services Section End -->
 
+        <!-- Portfolio Section Start -->
+        <section class="portfolio-section bg-white rel z-1 pt-135 rpt-95 pb-110 rpb-70" id="portfolio">
+            <div class="container">
+                <div class="row justify-content-between align-items-center pb-45">
+                    <div class="col-xl-7 col-lg-8">
+                        <div class="section-title mb-25">
+                            <span class="sub-title mb-15">Case studies</span>
+                            <h2>Look Our Recent <span>Solutions</span> Project</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="slider-arrow-btns text-lg-right mb-25">
+                            <button class="portfolio-prev"><i class="fas fa-long-arrow-alt-left"></i></button>
+                            <button class="portfolio-next"><i class="fas fa-long-arrow-alt-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-wrap">
+                <div class="portfolio-item wow fadeInUp delay-0-2s">
+                    <img src="assets/images/portfolios/portfolio1.jpg" alt="Portfolio">
+                    <a class="portfolio-hover" href="portfolio-details.html">
+                        <div class="content">
+                            <span class="category">Design Team</span>
+                            <h4>Web design Consulthing</h4>
+                        </div>
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                    </a>
+                </div>
+                <div class="portfolio-item wow fadeInUp delay-0-3s">
+                    <img src="assets/images/portfolios/portfolio2.jpg" alt="Portfolio">
+                    <a class="portfolio-hover" href="portfolio-details.html">
+                        <div class="content">
+                            <span class="category">Design Team</span>
+                            <h4>Web design Consulthing</h4>
+                        </div>
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                    </a>
+                </div>
+                <div class="portfolio-item wow fadeInUp delay-0-4s">
+                    <img src="assets/images/portfolios/portfolio3.jpg" alt="Portfolio">
+                    <a class="portfolio-hover" href="portfolio-details.html">
+                        <div class="content">
+                            <span class="category">Design Team</span>
+                            <h4>Web design Consulthing</h4>
+                        </div>
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                    </a>
+                </div>
+                <div class="portfolio-item wow fadeInUp delay-0-5s">
+                    <img src="assets/images/portfolios/portfolio4.jpg" alt="Portfolio">
+                    <a class="portfolio-hover" href="portfolio-details.html">
+                        <div class="content">
+                            <span class="category">Design Team</span>
+                            <h4>Web design Consulthing</h4>
+                        </div>
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                    </a>
+                </div>
+                <div class="portfolio-item wow fadeInUp delay-0-6s">
+                    <img src="assets/images/portfolios/portfolio5.jpg" alt="Portfolio">
+                    <a class="portfolio-hover" href="portfolio-details.html">
+                        <div class="content">
+                            <span class="category">Design Team</span>
+                            <h4>Web design Consulthing</h4>
+                        </div>
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                    </a>
+                </div>
+                <div class="portfolio-item wow fadeInUp delay-0-7s">
+                    <img src="assets/images/portfolios/portfolio1.jpg" alt="Portfolio">
+                    <a class="portfolio-hover" href="portfolio-details.html">
+                        <div class="content">
+                            <span class="category">Design Team</span>
+                            <h4>Web design Consulthing</h4>
+                        </div>
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                    </a>
+                </div>
+                <div class="portfolio-item wow fadeInUp delay-0-8s">
+                    <img src="assets/images/portfolios/portfolio2.jpg" alt="Portfolio">
+                    <a class="portfolio-hover" href="portfolio-details.html">
+                        <div class="content">
+                            <span class="category">Design Team</span>
+                            <h4>Web design Consulthing</h4>
+                        </div>
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                    </a>
+                </div>
+                <div class="portfolio-item wow fadeInUp delay-0-9s">
+                    <img src="assets/images/portfolios/portfolio3.jpg" alt="Portfolio">
+                    <a class="portfolio-hover" href="portfolio-details.html">
+                        <div class="content">
+                            <span class="category">Design Team</span>
+                            <h4>Web design Consulthing</h4>
+                        </div>
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                    </a>
+                </div>
+                <div class="portfolio-item wow fadeInUp delay-1-0s">
+                    <img src="assets/images/portfolios/portfolio4.jpg" alt="Portfolio">
+                    <a class="portfolio-hover" href="portfolio-details.html">
+                        <div class="content">
+                            <span class="category">Design Team</span>
+                            <h4>Web design Consulthing</h4>
+                        </div>
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                    </a>
+                </div>
+                <div class="portfolio-item wow fadeInUp delay-1-1s">
+                    <img src="assets/images/portfolios/portfolio5.jpg" alt="Portfolio">
+                    <a class="portfolio-hover" href="portfolio-details.html">
+                        <div class="content">
+                            <span class="category">Design Team</span>
+                            <h4>Web design Consulthing</h4>
+                        </div>
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Portfolio Section End -->
 
         {{-- <!-- About Section Start -->
         <section class="about-section rel z-1 pt-135 rpt-95 pb-140 rpb-100" id="about">
@@ -444,7 +824,7 @@
  --}}
 
         <!-- Portfolio Section Start -->
-        <section class="portfolio-section bg-white rel z-1 pt-135 rpt-95 pb-110 rpb-70" id="portfolio">
+        {{-- <section class="portfolio-section bg-white rel z-1 pt-135 rpt-95 pb-110 rpb-70" id="portfolio">
             <div class="container" id="content">
                 <div class="row justify-content-between align-items-center pb-45">
                     <div class="col-xl-7 col-lg-8">
@@ -474,8 +854,8 @@
                             <i class="fas fa-long-arrow-alt-right"></i>
                         </a>
                     </div>
-                @endforeach
-                {{-- <div class="portfolio-item wow fadeInUp delay-0-3s">
+                @endforeach --}}
+        {{-- <div class="portfolio-item wow fadeInUp delay-0-3s">
                     <img src="landing-page/assets/images/portfolios/portfolio2.jpg" alt="Portfolio">
                     <a class="portfolio-hover" href="portfolio-details.html">
                         <div class="content">
@@ -565,8 +945,8 @@
                         <i class="fas fa-long-arrow-alt-right"></i>
                     </a>
                 </div> --}}
-            </div>
-        </section>
+        {{-- </div>
+        </section> --}}
         <!-- Portfolio Section End -->
 
 
@@ -768,7 +1148,7 @@
                     </div>
                 </div> --}}
                 <div class="row justify-content-between">
-                    <div class="col-lg-3 col-sm-6">
+                    {{-- <div class="col-lg-3 col-sm-6">
                         <div class="footer-widget about-widget">
                             <div class="footer-logo mb-30">
                                 <a href="index.html"><img src="landing-page/assets/images/logos/logo-white.png"
@@ -804,8 +1184,8 @@
                                 <li><a href="services.html">consultancy</a></li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
+                    </div> --}}
+                    {{-- <div class="col-lg-3 col-sm-6">
                         <div class="footer-widget info-widget">
                             <h4 class="footer-title">Get In Touch</h4>
                             <p>We are always ready for your Solution</p>
@@ -816,19 +1196,20 @@
                                 <a href="contact.html"><i class="fab fa-google-plus-g"></i></a>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="copyright-area">
-                    <p>© 2022. <a href="index.html">Telco</a> All rights reserved.</p>
-                    <ul class="footer-menu py-5">
+                    <p>© 2022. <a href="index.html">BerAKHLAK Provinsi Jawa Timur</a> All rights reserved.</p>
+                    {{-- <ul class="footer-menu py-5">
                         <li><a href="contact.html">support</a></li>
                         <li><a href="contact.html">Privacy</a></li>
                         <li><a href="contact.html">policy</a></li>
                     </ul>
+                </div> --}}
                 </div>
-            </div>
-            <img class="triangle-shape" src="landing-page/assets/images/shapes/triangle.png" alt="Shape">
-            <img class="half-circle-shape" src="landing-page/assets/images/shapes/half-circle.png" alt="Shape">
+                <img class="half-circle-shape" src="landing-page/assets/images/shapes/half-circle.png"
+                    alt="Shape">
+                <img class="triangle-shape" src="landing-page/assets/images/shapes/triangle.png" alt="Shape">
         </footer>
         <!-- Footer Area End -->
 

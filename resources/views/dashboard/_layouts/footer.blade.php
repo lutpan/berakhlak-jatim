@@ -30,6 +30,7 @@
     <!-- Template Base Scripts End -->
 
     <!-- Page Specific Scripts Start -->
+    <script src="{{ asset('js/vendor/plyr.min.js') }}"></script>
     <script src="{{ asset('js/cs/dropzone.templates.js') }}"></script>
     <script src="{{ asset('js/forms/controls.dropzone.js') }}"></script>
     <script src="{{ asset('js/cs/datatable.extend.js') }}"></script>

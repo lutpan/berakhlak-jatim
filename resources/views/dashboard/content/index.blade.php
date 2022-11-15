@@ -37,7 +37,7 @@
                                 <th scope="row">{{ $loop->iteration }}</th>
                                 <td>{{ $content->nama_budaya_kerja }}</td>
                                 <td>{{ $content->kategori->name }}</td>
-                                <td><a href="upload">Upload</a></td>
+                                <td><a href="{{ url('content/upload/' . $content->path) }}">Upload</a></td>
                                 <td>
                                     {{-- {{ dd($content) }} --}}
                                     {{-- <a href='{{ 'content.edit', $content->id_content }}'  --}}

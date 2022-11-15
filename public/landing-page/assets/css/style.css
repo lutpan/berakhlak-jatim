@@ -34,7 +34,8 @@
     21. Main Footer */
 /* -------------------------------------------------------------- */
 /* Import Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap");
 /*******************************************************/
 /******************* 01. Default Style *****************/
 /*******************************************************/
@@ -66,8 +67,8 @@ body {
   font-weight: 400;
   line-height: 1.65;
   font-size: 16px;
-  font-family: "Inter", sans-serif;
-  text-transform: capitalize;
+  font-family: "Nunito", sans-serif;
+  /* text-transform: capitalize; */
 }
 
 a {
@@ -373,7 +374,7 @@ input[type=radio] {
   display: inline-block;
   text-transform: uppercase;
   text-decoration: underline;
-  font-family: "Domine", serif;
+  font-family: "Montserrat", serif;
 }
 
 .text-white .sub-title {
@@ -394,7 +395,7 @@ a.theme-btn {
   display: inline-block;
   text-transform: uppercase;
   background: #9E2029ff;
-  font-family: "Domine", serif;
+  font-family: "Montserrat", serif;
   border: 1px solid #9E2029ff;
 }
 
@@ -470,7 +471,7 @@ a.theme-btn.style-two:hover {
   display: flex;
   font-weight: 700;
   color: #1B1D21;
-  font-family: "Domine", serif;
+  font-family: "Montserrat", serif;
 }
 
 .list-style-one li:before {
@@ -712,7 +713,7 @@ a.theme-btn.style-two:hover {
   top: 0;
   left: 0;
   opacity: 0.9;
-  background-color: #010C2A;
+  background-color: #000000ff;
 }
 
 /* Shapes */
@@ -777,7 +778,7 @@ a.theme-btn.style-two:hover {
 }
 
 .bg-dark-blue {
-  background-color: #010C2A;
+  background-color: #000000ff;
 }
 
 /* Border Radius */
@@ -823,7 +824,7 @@ h6,
 .pricing-item .price {
   font-weight: 700;
   color: #1B1D21;
-  font-family: "Domine", serif;
+  font-family: "Montserrat", serif;
 }
 
 /*******************************************************/
@@ -4501,7 +4502,7 @@ h6,
   -ms-flex-pack: center;
   justify-content: center;
   background: transparent;
-  font-family: "Domine", serif;
+  font-family: "Montserrat", serif;
   text-transform: capitalize;
 }
 
@@ -4667,7 +4668,7 @@ h6,
   margin-bottom: 10px;
   padding: 15px 40px;
   color: #9E2029ff;
-  font-family: "Domine", serif;
+  font-family: "Montserrat", serif;
   text-transform: capitalize;
   border: 1px solid #9E2029ff;
 }
@@ -4950,7 +4951,7 @@ h6,
   margin-bottom: 10px;
   color: #9E2029ff;
   display: inline-block;
-  font-family: "Domine", serif;
+  font-family: "Montserrat", serif;
 }
 
 .portfolio-hover h4 {
@@ -5092,7 +5093,7 @@ h6,
 
 .portfolio-description table b {
   color: white;
-  font-family: "Domine", serif;
+  font-family: "Montserrat", serif;
 }
 
 .portfolio-description table .social-style-one a {
@@ -5171,7 +5172,7 @@ h6,
 
 .portfolio-footer-nav .next-prev-item span {
   color: #9E2029ff;
-  font-family: "Domine", serif;
+  font-family: "Montserrat", serif;
 }
 
 .portfolio-footer-nav .next-prev-item.prev {
@@ -5369,7 +5370,7 @@ h6,
   top: 0;
   left: 0;
   opacity: 0.7;
-  background-color: #010C2A;
+  background-color: #000000ff;
 }
 
 @media only screen and (max-width: 991px) {
@@ -5548,7 +5549,7 @@ h6,
   font-weight: 700;
   color: #9E2029ff;
   text-transform: capitalize;
-  font-family: "Domine", serif;
+  font-family: "Montserrat", serif;
 }
 
 .team-wrap {
@@ -5690,7 +5691,7 @@ h6,
   font-size: 14px;
   font-weight: 700;
   color: #9E2029ff;
-  font-family: "Domine", serif;
+  font-family: "Montserrat", serif;
 }
 
 /*******************************************************/
@@ -5726,7 +5727,7 @@ h6,
   border-radius: 0;
   color: #1B1D21;
   background: transparent;
-  font-family: "Domine", serif;
+  font-family: "Montserrat", serif;
   text-transform: capitalize;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6046,7 +6047,7 @@ h6,
 }
 
 .blog-content .btn-share b {
-  font-family: "Domine", serif;
+  font-family: "Montserrat", serif;
 }
 
 .blog-meta {
@@ -6123,7 +6124,7 @@ h6,
   border-radius: 10px;
   color: #1B1D21;
   background: #F6F6F6;
-  font-family: "Domine", serif;
+  font-family: "Montserrat", serif;
 }
 
 @media only screen and (max-width: 480px) {
@@ -6835,7 +6836,7 @@ h6,
 
 .footer-contact a {
   font-weight: 700;
-  font-family: "Domine", serif;
+  font-family: "Montserrat", serif;
 }
 
 .menu-widget ul li {
@@ -6891,7 +6892,7 @@ h6,
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-top: 45px;
-  padding-top: 35px;
+  padding-top: 5px;
   padding-bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6901,14 +6902,14 @@ h6,
   align-items: center;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  justify-content: space-between;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  justify-content: center;
+  /* border-top: 1px solid rgba(255, 255, 255, 0.1); */
 }
 
 .copyright-area p {
   font-weight: 700;
   margin-right: 25px;
-  font-family: "Domine", serif;
+  font-family: "Montserrat", serif;
 }
 
 .copyright-area p a {
@@ -6924,7 +6925,7 @@ h6,
   font-weight: 700;
   margin-bottom: 5px;
   text-transform: capitalize;
-  font-family: "Domine", serif;
+  font-family: "Montserrat", serif;
 }
 
 .copyright-area .footer-menu li {

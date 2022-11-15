@@ -10,6 +10,7 @@ class Upload extends Model
     use HasFactory;
 
     protected $table = "data_pendukung";
+    protected $guarded = [];
     // protected $fillable = ['file'];
 
     public function content()

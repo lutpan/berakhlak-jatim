@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Data;
 use App\Models\Content;
 use App\Models\Kategori;
 use App\Models\Kategoris;
@@ -64,6 +65,7 @@ class ContentController extends Controller
             'manfaat' => 'nullable',
             'peran_pimpinan' => 'nullable',
             'monev' => 'nullable',
+            'link' => 'nullable '
         ]);
 
         if ($request->file('image')) {
@@ -142,7 +144,8 @@ class ContentController extends Controller
             'kondisi_sesudah' =>  'nullable',
             'manfaat' =>  'nullable',
             'peran_pimpinan' =>  'nullable',
-            'monev' =>  'nullable'
+            'monev' =>  'nullable',
+            'link' => 'nullable'
         ]);
 
         // return $validate;
@@ -184,9 +187,61 @@ class ContentController extends Controller
         return redirect('/content')->with('success', 'Data berhasil di hapus.');
     }
 
-    public function upload()
+    // public function upload()
+    // {
+    //     return view('dashboard.data.index');
+    //     // Content::create($validate)
+    // }
+
+    public function upload(Content $content, $path)
     {
-        return view('dashboard.content.upload');
+        // $content = Content::where('path', $content->path)->get();
+        $content = Content::where('path', $path)->first();
+        // dd($content);
+        return view('dashboard.content.upload', ['content' => $content]);
         // Content::create($validate)
+    }
+
+    public function storeUpload(Request $request)
+    {
+
+        // $content = Content::where('path', $path)->first();
+        // ddd($content);
+        $validate = $request->validate([
+            'id_user' => 'nullable',
+            'id_content' => 'nullable',
+            // 'id_kategori' => 'nullable',
+            // 'nama_budaya_kerja' => 'nullable',
+            // 'path' => 'nullable',
+            'sk_tim' => 'nullable|file|mimes:pdf|max:2048',
+            'anggaran' => 'nullable|file|mimes:pdf|max:2048',
+            'sop' => 'nullable|file|mimes:pdf|max:2048',
+            'dok_pembangunan' => 'nullable|file|mimes:pdf|max:2048'
+        ]);
+
+        // if ($request->file(['sk-tim', 'anggaran', 'sop', 'dok-pembangunan', 'link'])) {
+        //     $validate[['sk-tim', 'anggaran', 'sop', 'dok-pembangunan', 'link']] = $request->file(['sk-tim', 'anggaran', 'sop', 'dok-pembangunan', 'link'])->store('upload/data_dukung');
+        // }
+
+        if ($request->file('sk_tim')) {
+            $validate['sk_tim'] = $request->file('sk_tim')->store('upload/data_dukung');
+        }
+        if ($request->file('anggaran')) {
+            $validate['anggaran'] = $request->file('anggaran')->store('upload/data_dukung');
+        }
+        if ($request->file('sop')) {
+            $validate['sop'] = $request->file('sop')->store('upload/data_dukung');
+        }
+        if ($request->file('dok_pembangunan')) {
+            $validate['dok_pembangunan'] = $request->file('dok_pembangunan')->store('upload/data_dukung');
+        }
+
+        // $validate['id_user'] = auth()->user()->id_user;
+        // dd($validate);
+        Content::where('id_content', $request->id_content)
+            ->update($validate);
+
+
+        return redirect('/content')->with('success', 'Berhasil menyimpan data.');
     }
 }

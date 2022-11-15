@@ -33,6 +33,8 @@
     <link rel="stylesheet" href="font/CS-Interface/style.css" />
     <!-- Font Tags End -->
     <!-- Vendor Styles Start -->
+    <link rel="stylesheet" href="{{ asset('css/vendor/introjs.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/vendor/plyr.css') }}">
     <link rel="stylesheet" href="{{ asset('css/vendor/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/vendor/OverlayScrollbars.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/vendor/datatables.min.css') }}">

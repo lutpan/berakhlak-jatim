@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Data;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -28,6 +29,10 @@ class Content extends Model
         return $this->belongsTo(User::class, 'id_user');
     }
 
+    public function data()
+    {
+        return $this->hasMany(Data::class, 'id_data_pendukung');
+    }
     public function getRouteKeyName()
     {
         return 'path';

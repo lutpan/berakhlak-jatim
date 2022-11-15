@@ -30,6 +30,12 @@ class CreateContentsTable extends Migration
             $table->text('manfaat')->nullable();
             $table->text('peran_pimpinan')->nullable();
             $table->text('monev')->nullable();
+            $table->text('link')->nullable();
+            #dokumen
+            $table->text('sk-tim')->nullable();
+            $table->text('anggaran')->nullable();
+            $table->text('sop')->nullable();
+            $table->text('dok-pembangunan')->nullable();
             $table->timestamps();
         });
     }

@@ -108,6 +108,11 @@
                         <label>Monitoring & Evaluasi</label>
                         {{-- Nama Budaya Kerja <input type="text" name="nama_budaya_kerja" id="nama_budaya_kerja"><br> --}}
                     </div>
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control  @error('link') is-invalid @enderror" type="text" name="link" id="link">'{{ $content->link }}'</textarea>
+                        <label>Link video Youtube</label>
+                        {{-- Nama Budaya Kerja <input type="text" name="nama_budaya_kerja" id="nama_budaya_kerja"><br> --}}
+                    </div>
                     <div class="input-group mb-3">
                         <input type="file" class="form-control" id="image" name="image" onchange="preview()">
                         @error('image')

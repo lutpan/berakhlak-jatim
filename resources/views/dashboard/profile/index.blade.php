@@ -73,72 +73,54 @@
                             <i data-acorn-icon="edit-square"></i>
                             <span>Edit</span>
                         </a>
-                        {{-- <button type="button" class="btn btn-outline-primary btn-icon btn-icon-start w-100 w-md-auto">
-                            <i data-acorn-icon="edit-square"></i>
-                            <span>Edit</span>
-                        </button> --}}
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
-    {{-- <div class="col-12 col-xl-8 col-xxl-9 mb-5 tab-content">
-            <div class="tab-pane fade show active" id="overviewTab" role="tabpanel">
-                <h2 class="small-title">Stats</h2>
-                <div class="mb-5">
-                    <div class="row g-2">
-                        <div class="col-12 col-sm-6 col-lg-3">
-                            <div class="card hover-border-primary">
-                                <div class="card-body">
-                                    <div class="heading mb-0 d-flex justify-content-between lh-1-25 mb-3">
-                                        <span>Projects</span>
-                                        <i data-acorn-icon="office" class="text-primary"></i>
-                                    </div>
-                                    <div class="text-small text-muted mb-1">ACTIVE</div>
-                                    <div class="cta-1 text-primary">14</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-lg-3">
-                            <div class="card hover-border-primary">
-                                <div class="card-body">
-                                    <div class="heading mb-0 d-flex justify-content-between lh-1-25 mb-3">
-                                        <span>Tasks</span>
-                                        <i data-acorn-icon="check-square" class="text-primary"></i>
-                                    </div>
-                                    <div class="text-small text-muted mb-1">PENDING</div>
-                                    <div class="cta-1 text-primary">153</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-lg-3">
-                            <div class="card hover-border-primary">
-                                <div class="card-body">
-                                    <div class="heading mb-0 d-flex justify-content-between lh-1-25 mb-3">
-                                        <span>Notes</span>
-                                        <i data-acorn-icon="file-empty" class="text-primary"></i>
-                                    </div>
-                                    <div class="text-small text-muted mb-1">RECENT</div>
-                                    <div class="cta-1 text-primary">24</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-lg-3">
-                            <div class="card hover-border-primary">
-                                <div class="card-body">
-                                    <div class="heading mb-0 d-flex justify-content-between lh-1-25 mb-3">
-                                        <span>Views</span>
-                                        <i data-acorn-icon="screen" class="text-primary"></i>
-                                    </div>
-                                    <div class="text-small text-muted mb-1">THIS MONTH</div>
-                                    <div class="cta-1 text-primary">524</div>
-                                </div>
-                            </div>
-                        </div>
+    <div class="row">
+        <div class="tab-pane" id="aboutTab" role="tabpanel">
+            <h2 class="small-title">About</h2>
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-5">
+                        <p class="text-small text-muted mb-2">ME</p>
+                        <p>
+                            Jujubes brownie marshmallow apple pie donut ice cream jelly-o jelly-o gummi bears.
+                            Tootsie
+                            roll
+                            chocolate bar dragée bonbon cheesecake icing. Danish wafer donut cookie caramels
+                            gummies
+                            topping.
+                        </p>
+                    </div>
+                    <div class="mb-5">
+                        <p class="text-small text-muted mb-2">INTERESTS</p>
+                        <p>
+                            Chocolate cake biscuit donut cotton candy soufflé cake macaroon. Halvah chocolate
+                            cotton
+                            candy
+                            sweet
+                            roll jelly-o candy danish dragée. Apple pie cotton candy tiramisu biscuit cake
+                            muffin
+                            tootsie
+                            roll
+                            bear claw cake. Cupcake cake fruitcake.
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-small text-muted mb-2">CONTACT</p>
+                        <a href="#" class="d-block body-link mb-1">
+                            <i data-acorn-icon="screen" class="me-2" data-acorn-size="17"></i>
+                            <span class="align-middle">blainecottrell.com</span>
+                        </a>
+                        <a href="#" class="d-block body-link">
+                            <i data-acorn-icon="email" class="me-2" data-acorn-size="17"></i>
+                            <span class="align-middle">contact@blainecottrell.com</span>
+                        </a>
                     </div>
                 </div>
             </div>
-        </div> --}}
+        </div>
     </div>
 @endsection

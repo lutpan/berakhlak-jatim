@@ -7,7 +7,7 @@
     <title>Berakhlak Provinsi Jawa Timur | Login</title>
     <meta name="description" content="Login Page" />
     <!-- Favicon Tags Start -->
-    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="img/favicon/apple-touch-icon-57x57.png" />
+    {{-- <link rel="apple-touch-icon-precomposed" sizes="57x57" href="img/favicon/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png" />
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png" />
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/favicon/apple-touch-icon-144x144.png" />
@@ -26,7 +26,7 @@
     <meta name="msapplication-square70x70logo" content="img/favicon/mstile-70x70.png" />
     <meta name="msapplication-square150x150logo" content="img/favicon/mstile-150x150.png" />
     <meta name="msapplication-wide310x150logo" content="img/favicon/mstile-310x150.png" />
-    <meta name="msapplication-square310x310logo" content="img/favicon/mstile-310x310.png" />
+    <meta name="msapplication-square310x310logo" content="img/favicon/mstile-310x310.png" /> --}}
     <!-- Favicon Tags End -->
     <!-- Font Tags Start -->
     <link rel="preconnect" href="{{ asset('https://fonts.gstatic.com') }}" />
@@ -52,7 +52,7 @@
 <body class="h-100">
     <div id="root" class="h-100">
         <!-- Background Start -->
-        <div class="fixed-background"></div>
+        <div class=""></div>
         <!-- Background End -->
 
         <div class="container-fluid p-0 h-100 position-relative">
@@ -72,7 +72,7 @@
                                     process-centric communities...
                                 </p>
                                 <div class="mb-5">
-                                    <a class="btn btn-lg btn-outline-white" href="index.html">Learn More</a>
+                                    <a class="btn btn-lg btn-outline-white" href="home">Kembali ke Home</a>
                                 </div>
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                             <div class="sh-11">
                                 <a href="#">
                                     <div class="logo-default">
-                                        <img src="../img/logo/logo-berakhlak.png" alt="">
+                                        {{-- <img src="{{ asset('/img/logo/logo-berakhlak.png') }}" alt=""> --}}
                                     </div>
                                 </a>
                             </div>

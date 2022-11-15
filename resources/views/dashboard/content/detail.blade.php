@@ -133,57 +133,73 @@
                             <p>
                                 {{ $content->monev }}
                             </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-footer border-0 pt-0">
-                    <div class="row align-items-center">
-                        <div class="col-6 text-muted">
-                            <div class="row g-0">
-                                <div class="col-auto pe-3">
-                                    <i data-acorn-icon="eye" class="text-primary me-1" data-acorn-size="15"></i>
-                                    <span class="align-middle">421</span>
-                                </div>
-                                <div class="col">
-                                    <i data-acorn-icon="message" class="text-primary me-1" data-acorn-size="15"></i>
-                                    <span class="align-middle">4</span>
+                            <h6 class="mb-3 mt-5 text-alternate">Youtube Video</h6>
+                            <p>
+                            <div class="col-12 col-xl-8">
+                                <h2 class="small-title">Video Guide</h2>
+                                <div class="card h-100-card sh-md-45 bg-transparent">
+                                    <iframe class="player cover" id="videoGuide" src="{{ $content->link }}">
+                                    </iframe>
+                                    <video class="player cover" poster="img/product/large/product-2.webp" id="videoGuide">
+                                        <source src="{{ $content->link }}" type="video">
+                                    </video>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6">
-                            <div class="d-flex align-items-center justify-content-end">
-                                <button class="btn btn-sm btn-icon btn-icon-only btn-outline-primary ms-1" type="button">
-                                    <i data-acorn-icon="facebook"></i>
-                                </button>
-                                <button class="btn btn-sm btn-icon btn-icon-only btn-outline-primary ms-1" type="button">
-                                    <i data-acorn-icon="twitter"></i>
-                                </button>
-                            </div>
-                        </div>
                     </div>
+                    {{ $content->link }}
+                    </p>
                 </div>
             </div>
-            <!-- Striped Rows End -->
-            <h2 class="small-title">Instansi Pembuat Budaya Kerja</h2>
-            <div class="card mb-5">
-                <div class="card-body">
+        </div>
+        <div class="card-footer border-0 pt-0">
+            <div class="row align-items-center">
+                <div class="col-6 text-muted">
                     <div class="row g-0">
-                        <div class="col-auto">
-                            <div class="sw-5 me-3">
-                                <img src="{{ asset('storage/' . $content->user->avatar) }}" class="img-fluid rounded-xl"
-                                    alt="thumb">
-                            </div>
+                        <div class="col-auto pe-3">
+                            <i data-acorn-icon="eye" class="text-primary me-1" data-acorn-size="15"></i>
+                            <span class="align-middle">421</span>
                         </div>
                         <div class="col">
-                            <a href="#">{{ $content->user->name }}</a>
-                            <div class="text-muted text-small mb-2">{{ $content->user->telfon }}</div>
-                            <div class="text-muted text-small mb-2">{{ $content->user->alamat }}</div>
-                            <div class="text-muted text-small mb-2">{{ $content->user->email }}</div>
-                            <div class="text-medium text-alternate mb-1 clamp-line" data-line="2">
-                                {{ $content->user->bio }}
-                            </div>
+                            <i data-acorn-icon="message" class="text-primary me-1" data-acorn-size="15"></i>
+                            <span class="align-middle">4</span>
                         </div>
                     </div>
                 </div>
+                <div class="col-6">
+                    <div class="d-flex align-items-center justify-content-end">
+                        <button class="btn btn-sm btn-icon btn-icon-only btn-outline-primary ms-1" type="button">
+                            <i data-acorn-icon="facebook"></i>
+                        </button>
+                        <button class="btn btn-sm btn-icon btn-icon-only btn-outline-primary ms-1" type="button">
+                            <i data-acorn-icon="twitter"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
-        @endsection
+        </div>
+    </div>
+    <!-- Striped Rows End -->
+    <h2 class="small-title">Instansi Pembuat Budaya Kerja</h2>
+    <div class="card mb-5">
+        <div class="card-body">
+            <div class="row g-0">
+                <div class="col-auto">
+                    <div class="sw-5 me-3">
+                        <img src="{{ asset('storage/' . $content->user->avatar) }}" class="img-fluid rounded-xl"
+                            alt="thumb">
+                    </div>
+                </div>
+                <div class="col">
+                    <a href="#">{{ $content->user->name }}</a>
+                    <div class="text-muted text-small mb-2">{{ $content->user->telfon }}</div>
+                    <div class="text-muted text-small mb-2">{{ $content->user->alamat }}</div>
+                    <div class="text-muted text-small mb-2">{{ $content->user->email }}</div>
+                    <div class="text-medium text-alternate mb-1 clamp-line" data-line="2">
+                        {{ $content->user->bio }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection

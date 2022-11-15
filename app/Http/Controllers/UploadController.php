@@ -9,33 +9,35 @@ use Illuminate\Http\Request;
 class UploadController extends Controller
 {
 
-    public function upload()
+    public function index()
     {
-        $content = Content::find('id_content');
-        return view('dashboard.content.upload', ['content' => $content]);
+        $content = Content::find('id_content')->first;
+        // dd($content);
+        return view('dashboard.upload.index', ['content' => $content]);
+        // return view('dashboard.data.index');
     }
 
-    public function storeUpload(Request $request)
-    {
-        $this->validate($request, [
-            'file' => 'nullable|file|mimes:pdf|max:2048',
-        ]);
+    // public function storeUpload(Request $request)
+    // {
+    //     $this->validate($request, [
+    //         'file' => 'nullable|file|mimes:pdf|max:2048',
+    //     ]);
 
-        // menyimpan data file yang diupload ke variabel $file
-        $file = $request->file('file');
+    //     // menyimpan data file yang diupload ke variabel $file
+    //     $file = $request->file('file');
 
-        $nama_file = time() . "_" . $file->getClientOriginalName();
-        $extension = pathinfo($nama_file, PATHINFO_EXTENSION);
-        $namaFile = $nama_file . '-' . $extension;
-        // isi dengan nama folder tempat kemana file diupload
-        $tujuan_upload = scandir(public_path('uploads/data_pendukung'));
-        $file->move($tujuan_upload, $namaFile);
+    //     $nama_file = time() . "_" . $file->getClientOriginalName();
+    //     $extension = pathinfo($nama_file, PATHINFO_EXTENSION);
+    //     $namaFile = $nama_file . '-' . $extension;
+    //     // isi dengan nama folder tempat kemana file diupload
+    //     $tujuan_upload = scandir(public_path('uploads/data_pendukung'));
+    //     $file->move($tujuan_upload, $namaFile);
 
-        Upload::create([
-            'file' => $file,
-        ]);
-        // dd($file)
+    //     Upload::create([
+    //         'file' => $file,
+    //     ]);
+    //     // dd($file)
 
-        return redirect('content')->with('success', 'berhasil upload');
-    }
+    //     return redirect('content')->with('success', 'berhasil upload');
+    // }
 }
