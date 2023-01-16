@@ -157,7 +157,8 @@ Quill.register('modules/counter', function (quill, options) {
       // quill.deleteText(limit, text.split(/\s+/).length);
       document.getElementById('counter3').style.color = 'red';
       // alert('sudah melebihi batas kata')
-    } if ((text.split(/\s+/).length - 1) <= limit) {
+    }
+    if ((text.split(/\s+/).length - 1) <= limit3) {
       document.getElementById('counter3').style.color = 'black';
     }
 
@@ -198,7 +199,7 @@ Quill.register('modules/counter', function (quill, options) {
       // quill.deleteText(limit, text.split(/\s+/).length);
       document.getElementById('counter4').style.color = 'red';
       // alert('sudah melebihi batas kata')
-    } if ((text.split(/\s+/).length - 1) <= limit) {
+    } if ((text.split(/\s+/).length - 1) <= limit4) {
       document.getElementById('counter4').style.color = 'black';
     }
   });
@@ -237,7 +238,7 @@ Quill.register('modules/counter', function (quill, options) {
       // quill.deleteText(limit, text.split(/\s+/).length);
       document.getElementById('counter5').style.color = 'red';
       // alert('sudah melebihi batas kata')
-    } if ((text.split(/\s+/).length - 1) <= limit) {
+    } if ((text.split(/\s+/).length - 1) <= limit5) {
       document.getElementById('counter5').style.color = 'black';
     }
   });
@@ -276,7 +277,7 @@ Quill.register('modules/counter', function (quill, options) {
       // quill.deleteText(limit, text.split(/\s+/).length);
       document.getElementById('counter6').style.color = 'red';
       // alert('sudah melebihi batas kata')
-    } if ((text.split(/\s+/).length - 1) <= limit) {
+    } if ((text.split(/\s+/).length - 1) <= limit5) {
       document.getElementById('counter6').style.color = 'black';
     }
   });
@@ -306,16 +307,16 @@ Quill.register('modules/counter', function (quill, options) {
   quill.on('text-change', function () {
     var text = quill.getText();
     container.innerText = (text.split(/\s+/).length - 1) + ' / 150 Kata';
-    var limit5 = 150
+    var limit6 = 150
     // if (quill.getLength(text.split(/\s+/)) > limit) {
     //   quill.deleteText(limit, quill.getLength(text.split(/\s+/)));
     // alert('sudah melebihi batas kata')
     // }
-    if ((text.split(/\s+/).length - 1) > limit5) {
+    if ((text.split(/\s+/).length - 1) > limit6) {
       // quill.deleteText(limit, text.split(/\s+/).length);
       document.getElementById('counter7').style.color = 'red';
       // alert('sudah melebihi batas kata')
-    } if ((text.split(/\s+/).length - 1) <= limit) {
+    } if ((text.split(/\s+/).length - 1) <= limit6) {
       document.getElementById('counter7').style.color = 'black';
     }
   });

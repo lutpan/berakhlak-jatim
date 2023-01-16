@@ -3188,7 +3188,7 @@ a.body:active {
 }
 
 img {
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .absolute-center {

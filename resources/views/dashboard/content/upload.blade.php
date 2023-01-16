@@ -91,7 +91,7 @@
                                     <span class="label">Dokumen Data Dukung Lainnya</span></a>
                             @else
                                 <i data-acorn-icon="file-text" class="icon" data-acorn-size="18"></i>
-                                <span class="label">Belum Upload Dokumen Pembangunan Budaya Kerja</span>
+                                <span class="label">Tidak ada dokumen data dukung tambahan</span>
                             @endif
                         </div>
                     </div>
@@ -105,7 +105,7 @@
                                     <span class="label">Dokumen Data Dukung Lainnya</span></a>
                             @else
                                 <i data-acorn-icon="file-text" class="icon" data-acorn-size="18"></i>
-                                <span class="label">Belum Upload Dokumen Data Dukung Lainnya</span>
+                                <span class="label">Tidak ada dokumen data dukung tambahan</span>
                             @endif
                         </div>
                     </div>

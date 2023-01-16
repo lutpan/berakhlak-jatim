@@ -8,22 +8,21 @@
                             @if ($content->image)
                                 <ul class="glide__slides gallery-glide-custom">
                                     <li class="glide__slide p-0">
+                                        {{-- <a href="{{ asset('storage/' . $content->image) }}"> --}}
+                                        {{-- {{ $y = str_replace('watch?v=', 'embed/', $content->link) }} --}}
+                                        {{-- <iframe id="videoGuide"
+                                            src="{{ str_replace('watch?v=', 'embed/', $content->link) }}"
+                                            class="responsive border-0 rounded-top-end rounded-top-start img-fluid mb-3 sh-50 w-100">
+                                        </iframe> --}}
+                                        {{-- </a> --}}
                                         @if ($content->image)
-                                            {{-- <a href="{{ asset('storage/' . $content->image) }}"> --}}
-                                            {{-- {{ $y = str_replace('watch?v=', 'embed/', $content->link) }} --}}
-                                            {{-- <iframe id="videoGuide"
-                                                src="{{ str_replace('watch?v=', 'embed/', $content->link) }}"
-                                                class="responsive border-0 rounded-top-end rounded-top-start img-fluid mb-3 sh-50 w-100">
-                                            </iframe> --}}
-                                            {{-- </a> --}}
                                             <a href="{{ asset($content->image) }}">
                                                 <img alt="detail" src="{{ asset($content->image) }}"
                                                     class="responsive border-0 rounded-top-end rounded-top-start img-fluid mb-3 sh-50 w-100">
                                             </a>
                                         @else
-                                            <a href="/img/logo/logo-jatim.png">
-                                                <img src="/img/logo/logo-jatim.png"
-                                                    class="responsive border-0 rounded-top-end rounded-top-start img-fluid mb-3 sh-50 w-100">
+                                            <img src="{{ asset('img/logo/logo-jatim.png') }}"
+                                                class="responsive border-0 rounded-top-end rounded-top-start img-fluid mb-3 sh-50 w-100">
                                         @endif
 
                                     </li>
@@ -31,8 +30,8 @@
                             @else
                                 <ul class="glide__slides gallery-glide-custom">
                                     <li class="glide__slide p-0">
-                                        <a href="/img/logo/YOUTUBE-0.JPG">
-                                            <img alt="detail" src="../img/logo/YOUTUBE-0.JPG"
+                                        <a href="{{ asset('/img/logo/logo-berakhlak.png') }}">
+                                            <img alt="detail" src="{{ asset('/img/logo/logo-berakhlak.png') }}"
                                                 class="responsive border-0 rounded-top-end rounded-top-start img-fluid mb-3 sh-50 w-100">
                                         </a>
                                     </li>
@@ -77,6 +76,7 @@
                         <p>
                             {!! $content->kesimpulan !!}
                         </p>
+                        <h5 class="mb-3 mt-5 text-alternate">Video Dokumentasi Budaya Kerja</h5>
                         <iframe width="720" height="480"
                             src="{{ str_replace('watch?v=', 'embed/', $content->link) }}" class="responsive mb-3">
                         </iframe>
@@ -96,7 +96,11 @@
                 <div class="row g-0">
                     <div class="col-auto">
                         <div class="sw-5 me-3">
-                            <img src="{{ asset($content->users->avatar) }}" class="img-fluid rounded-xl">
+                            @if ($content->users->avatar)
+                                <img src="{{ asset($content->users->avatar) }}" class="img-fluid rounded-xl">
+                            @else
+                                <img src="{{ asset('img/logo/logo-jatim.png') }}" class="img-fluid rounded-xl">
+                            @endif
                         </div>
                     </div>
                     <div class="col">
