@@ -21,9 +21,9 @@
                     {{-- Kategori Penguatan <input type="checkbox" name="kategori" id="kategori"><br> --}}
                     {{-- @foreach ($content as $c) --}}
                     <input class="form-control" type="hidden" name="id_user" id="id_user"
-                        value="{{ Auth::user()->id_user }}" />
+                        value="{{ $content->id_user }}" />
                     <input class="form-control" type="hidden" name="id_level" id="id_level"
-                        value="{{ Auth::user()->id_level }}" />
+                        value="{{ $content->id_level }}" />
                     <input class="form-control" type="hidden" name="id_content" id="id_content"
                         value="{{ $content->id_content }}" />
                     <div class="form-floating mb-3 w-100">
@@ -79,7 +79,7 @@
                         </div>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="hidden" name="latar_belakang" value="{{ $content->latar_belakang }}">
+                        <input type="hidden" name="latar_belakang" value="{{ $content->latar_belakang }}" readonly>
                         @error('latar_belakang')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror

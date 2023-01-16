@@ -36,10 +36,10 @@ Quill.register('modules/counter', function (quill, options) {
       // quill.deleteText(limit, text.split(/\s+/).length);
       document.getElementById('counter').style.color = 'red';
       // alert('sudah melebihi batas kata')
+    } if ((text.split(/\s+/).length - 1) <= limit) {
+      document.getElementById('counter').style.color = 'black';
     }
-    else {
 
-    }
   });
 });
 
@@ -73,9 +73,10 @@ Quill.register('modules/counter', function (quill, options) {
     // alert('sudah melebihi batas kata')
     // }
     if ((text.split(/\s+/).length - 1) > limit1) {
-      // quill.deleteText(limit, text.split(/\s+/).length);
       document.getElementById('counter1').style.color = 'red';
-      // alert('sudah melebihi batas kata')
+    }
+    if ((text.split(/\s+/).length - 1) <= limit1) {
+      document.getElementById('counter1').style.color = 'black';
     }
 
   });
@@ -116,6 +117,9 @@ Quill.register('modules/counter', function (quill, options) {
       document.getElementById('counter2').style.color = 'red';
       // alert('sudah melebihi batas kata')
     }
+    if ((text.split(/\s+/).length - 1) <= limit2) {
+      document.getElementById('counter2').style.color = 'black';
+    }
 
   });
 });
@@ -153,6 +157,8 @@ Quill.register('modules/counter', function (quill, options) {
       // quill.deleteText(limit, text.split(/\s+/).length);
       document.getElementById('counter3').style.color = 'red';
       // alert('sudah melebihi batas kata')
+    } if ((text.split(/\s+/).length - 1) <= limit) {
+      document.getElementById('counter3').style.color = 'black';
     }
 
   });
@@ -192,6 +198,8 @@ Quill.register('modules/counter', function (quill, options) {
       // quill.deleteText(limit, text.split(/\s+/).length);
       document.getElementById('counter4').style.color = 'red';
       // alert('sudah melebihi batas kata')
+    } if ((text.split(/\s+/).length - 1) <= limit) {
+      document.getElementById('counter4').style.color = 'black';
     }
   });
 });
@@ -229,6 +237,8 @@ Quill.register('modules/counter', function (quill, options) {
       // quill.deleteText(limit, text.split(/\s+/).length);
       document.getElementById('counter5').style.color = 'red';
       // alert('sudah melebihi batas kata')
+    } if ((text.split(/\s+/).length - 1) <= limit) {
+      document.getElementById('counter5').style.color = 'black';
     }
   });
 });
@@ -266,6 +276,8 @@ Quill.register('modules/counter', function (quill, options) {
       // quill.deleteText(limit, text.split(/\s+/).length);
       document.getElementById('counter6').style.color = 'red';
       // alert('sudah melebihi batas kata')
+    } if ((text.split(/\s+/).length - 1) <= limit) {
+      document.getElementById('counter6').style.color = 'black';
     }
   });
 });
@@ -303,6 +315,8 @@ Quill.register('modules/counter', function (quill, options) {
       // quill.deleteText(limit, text.split(/\s+/).length);
       document.getElementById('counter7').style.color = 'red';
       // alert('sudah melebihi batas kata')
+    } if ((text.split(/\s+/).length - 1) <= limit) {
+      document.getElementById('counter7').style.color = 'black';
     }
   });
 });

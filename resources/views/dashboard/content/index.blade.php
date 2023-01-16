@@ -4,6 +4,12 @@
     {{-- </div> --}}
 @endsection
 @section('content')
+    <style>
+        table.dataTable.nowrap th,
+        table.dataTable.nowrap td {
+            white-space: normal !important;
+        }
+    </style>
     <!-- Striped Rows Start -->
     <section class="scroll-section" id="pagination">
         <div class="card mb-5">
@@ -120,27 +126,29 @@
                                     class="btn btn-sm btn-icon btn-icon-only btn-outline-warning"><i
                                     data-acorn-icon="edit" title="Tooltip on left"></i></a>
                                 </td> --}}
-                            </tr>
-                            <div class="modal fade" id="modal-{{ $content->id_content }}" tabindex="-1" role="dialog"
-                                aria-hidden="true">
-                                <div class="modal-dialog modal-xl">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">{{ $content->nama_budaya_kerja }}</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            @include('dashboard.content.detail')
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-bs-dismiss="modal">Close</button>
+
+                                    <div class="modal fade" id="modal-{{ $content->id_content }}" tabindex="-1"
+                                        role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-xl">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">{{ $content->nama_budaya_kerja }}</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    @include('dashboard.content.detail')
+                                                    {{-- cek --}}
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            </td>
+                                </td>
+                            </tr>
                         @endforeach
 
                     </tbody>

@@ -1,8 +1,8 @@
 <div class="row">
-    <div class="col-12  mb-5">
+    <div class="col-12 mb-5">
         <div class="card mb-5">
             <div class="card-body p-0">
-                <div class="glide glide-gallery" id="glideBlogDetail">
+                <div class="glide glide-gallery" id="">
                     <div class="glide glide-large">
                         <div class="glide__track" data-glide-el="track">
                             @if ($content->image)
@@ -38,7 +38,6 @@
                                     </li>
                                 </ul>
                             @endif
-
                         </div>
                     </div>
                 </div>
@@ -83,18 +82,7 @@
                         </iframe>
                         <div class="card-footer border-0 pt-0">
                             <div class="row align-items-center">
-                                {{-- <div class="col-12">
-                                    <div class="d-flex align-items-center justify-content-end">
-                                        <button class="btn btn-sm btn-icon btn-icon-only btn-outline-primary ms-1"
-                                            type="button">
-                                            <i data-acorn-icon="facebook"></i>
-                                        </button>
-                                        <button class="btn btn-sm btn-icon btn-icon-only btn-outline-primary ms-1"
-                                            type="button">
-                                            <i data-acorn-icon="twitter"></i>
-                                        </button>
-                                    </div>
-                                </div> --}}
+
                             </div>
                         </div>
                     </div>
@@ -109,7 +97,6 @@
                     <div class="col-auto">
                         <div class="sw-5 me-3">
                             <img src="{{ asset($content->users->avatar) }}" class="img-fluid rounded-xl">
-                            {{-- {{ $content->users->avatars }} --}}
                         </div>
                     </div>
                     <div class="col">
@@ -125,6 +112,6 @@
             </div>
         </div>
     </div>
-    <div class="card-footer border-0 pt-0">
-    </div>
+    {{-- <div class="card-footer border-0 pt-0">
+    </div> --}}
 </div>
