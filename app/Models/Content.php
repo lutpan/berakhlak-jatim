@@ -3,6 +3,9 @@
 namespace App\Models;
 
 use App\Models\Data;
+use App\Models\Level;
+use App\Models\Tahun;
+use App\Models\Dokumentasi;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -24,7 +27,15 @@ class Content extends Model
         return $this->belongsTo(Kategori::class, 'id_kategori');
     }
 
-    public function user()
+    public function tahun()
+    {
+        return $this->belongsTo(Tahun::class, 'id_tahun');
+    }
+    public function level()
+    {
+        return $this->belongsTo(Level::class, 'id_level');
+    }
+    public function users()
     {
         return $this->belongsTo(User::class, 'id_user');
     }
@@ -32,6 +43,10 @@ class Content extends Model
     public function data()
     {
         return $this->hasMany(Data::class, 'id_data_pendukung');
+    }
+    public function dokumentasi()
+    {
+        return $this->hasMany(Dokumentasi::class, 'id_dokumentasi');
     }
     public function getRouteKeyName()
     {

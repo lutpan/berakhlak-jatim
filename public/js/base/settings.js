@@ -242,7 +242,7 @@ class Settings {
         document.documentElement.setAttribute(this.attributeOptions[id].attribute, value);
       }
       if (this.attributeOptions[id].event) {
-        document.documentElement.dispatchEvent(new CustomEvent(this.attributeOptions[id].event, {detail: value}));
+        document.documentElement.dispatchEvent(new CustomEvent(this.attributeOptions[id].event, { detail: value }));
       }
     }
   }

@@ -11,7 +11,7 @@
             <form method="post" action="{{ url('profile/updateSetting/' . $user->id_user) }}" enctype="multipart/form-data">
                 @method('put')
                 @csrf
-                <input class="form-control" type="text" name="id_user" id="id_user"
+                <input class="form-control" type="hidden" name="id_user" id="id_user"
                     value="{{ Auth::user()->id_user }}" />
                 <div class="mb-3 row">
                     <label class="col-lg-2 col-md-3 col-sm-4 col-form-label">Nama Instansi</label>
@@ -22,15 +22,15 @@
                 <div class="mb-3 row">
                     <label class="col-lg-2 col-md-3 col-sm-4 col-form-label">Username</label>
                     <div class="col-sm-8 col-md-9 col-lg-10">
-                        <input type="text" class="form-control" value="{{ $user->username }}" name="username">
+                        <input type="text" class="form-control" value="{{ $user->username }}" name="username" readonly>
                     </div>
                 </div>
-                <div class="mb-3 row">
+                {{-- <div class="mb-3 row">
                     <label class="col-lg-2 col-md-3 col-sm-4 col-form-label">Password</label>
                     <div class="col-sm-8 col-md-9 col-lg-10">
                         <input type="text" class="form-control" value="{{ $user->password }}" name="password">
                     </div>
-                </div>
+                </div> --}}
                 <div class="mb-3 row">
                     <label class="col-lg-2 col-md-3 col-sm-4 col-form-label">No. Telfon</label>
                     <div class="col-sm-8 col-md-9 col-lg-10">
@@ -60,12 +60,12 @@
                 <div class="mb-3 row">
                     <label class="col-lg-2 col-md-3 col-sm-4 col-form-label">Avatar</label>
                     <div class="col-sm-8 col-md-9 col-lg-10">
-                        <input type="file" class="form-control @error('avatar') is-invalid @enderror" id="avatar"
+                        <input type="file" class="form-control @error('avatar') is-invalid @enderror mb-3" id="avatar"
                             name="avatar" onchange="preview()">
                         @if ($user->avatar)
-                            <img src="{{ asset('storage/' . $user->avatar) }}" class="img-preview img-fluid mb-3 col-sm-5">
+                            <img src="{{ asset($user->avatar) }}" class="img-preview img-fluid rounded mb-4 me-1 sh-19">
                         @else
-                            <img class="img-preview img-fluid mb-3 col-sm-5">
+                            <img class="img-preview img-fluid rounded mb-4 me-1 sh-19">
                         @endif
                     </div>
                     @error('avatar')
@@ -76,8 +76,11 @@
                 </div>
                 <div class="mb-3 row mt-5">
                     <div class="ms-auto">
+                        <button type="button" class="btn btn-background hover-outline mb-1"
+                            onclick="history.back(-1)">Cancel</button>
                         <button type="submit" class="btn btn-primary">Update</button>
                     </div>
+
                 </div>
             </form>
         </div>

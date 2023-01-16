@@ -61,7 +61,12 @@ class User extends Authenticatable
 
     public function content()
     {
-        return $this->belongsTo(Content::class, 'id_user');
+        return $this->hasMany(Content::class, 'id_content');
         // return $this->belongsTo(Content::class);
+    }
+
+    public function level()
+    {
+        return $this->belongsTo(Level::class, 'id_level');
     }
 }

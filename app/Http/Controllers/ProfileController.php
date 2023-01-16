@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Profile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
@@ -36,7 +37,6 @@ class ProfileController extends Controller
             'id_user' => 'required',
             'name' => 'nullable',
             'username' => 'nullable',
-            'password' => 'nullable',
             'telfon' => 'nullable',
             'alamat' => 'nullable',
             'bio' => 'nullable',
@@ -46,12 +46,10 @@ class ProfileController extends Controller
 
 
         if ($request->file('avatar')) {
-            // if ($request->oldImage) {
-            //     Storage::delete($request->oldImage);
-            // }
-            $validate['avatar'] = $request->file('avatar')->store('upload/avatars');
+            // $validate['avatar'] = $request->file('avatar')->store('upload/avatars');
+            $validate['avatar'] = $request->file('avatar')->move('upload/avatar', $request->file('avatar')->getClientOriginalName());
         }
-
+        // $validate['password'] = Hash::make($validate['password']);
         // $user = User::where('id_user', auth()->user()->id_user)->get();
         User::where('id_user', auth()->user()->id_user)->first()
             ->update($validate);

@@ -4533,7 +4533,7 @@ h6,
 /*******************************************************/
 @media only screen and (min-width: 1501px) {
   .service-title-content {
-    margin-left: 30px;
+    margin-left: 15px;
   }
 }
 
@@ -4863,13 +4863,15 @@ h6,
 .portfolio-item {
   overflow: hidden;
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 10;
   border-radius: 10px;
   z-index: 1;
   position: relative;
+  object-fit: cover;
 }
 
 .portfolio-item::before {
+  object-fit: cover;
   position: absolute;
   content: "";
   width: 100%;
@@ -4882,7 +4884,8 @@ h6,
 }
 
 .portfolio-item img {
-  width: 100%;
+  width: 357px;
+  height: 235px;
 }
 
 .portfolio-item:before {
@@ -5289,7 +5292,7 @@ h6,
 
 .pricing-item .license {
   display: block;
-  font-size: 14px;
+  font-size: 20px;
   margin-bottom: 40px;
 }
 
@@ -5310,7 +5313,7 @@ h6,
   }
 }
 
-.pricing-item .price:before {
+/* .pricing-item .price:before {
   content: '$';
   left: 20px;
   top: -12px;
@@ -5333,7 +5336,7 @@ h6,
   content: '/ month';
   margin-left: 10px;
   text-transform: capitalize;
-}
+} */
 
 .pricing-item .list-style-one {
   margin-top: 33px;
@@ -6112,7 +6115,7 @@ h6,
 
 /* Blog Details */
 .blog-details-content .blog-content>p {
-  margin-bottom: 30px;
+  margin-bottom: 5px;
 }
 
 .blog-details-content blockquote {

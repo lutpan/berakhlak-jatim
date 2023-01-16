@@ -44,4 +44,10 @@ class DataController extends Controller
 
         redirect('/data');
     }
+
+    public function indexAdmin()
+    {
+        $data = Content::get()->all();
+        return view('dashboard.data.indexAdmin', compact('data'));
+    }
 }

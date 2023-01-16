@@ -18,29 +18,45 @@
                     @csrf
                     <input class="form-control" type="hidden" name="id_user" id="id_user"
                         value="{{ Auth::user()->id_user }}" />
+                    <input class="form-control" type="hidden" name="id_level" id="id_level"
+                        value="{{ Auth::user()->id_level }}" />
+                    <div class="form-floating mb-3 w-10">
+                        <select class="form-control @error('{{ $t->id_tahun }}') is-invalid @enderror" name="id_tahun"
+                            id="select2FloatingLabel">
+                            <option label="&nbsp;" selected>Pilih Periode Tahun</option>
+                            @foreach ($tahun as $t)
+                                <option value="{{ $t->id_tahun }}" selected>{{ $t->tahun }}</option>
+                            @endforeach
+                        </select>
+                        @error('{{ $t->id_tahun }}')
+                            <div class="invalid-feedback">
+                                Kolom wajib di isi.
+                            </div>
+                        @enderror
+                        <label>Periode Tahun</label>
+                    </div>
+                    <h2 class="small-title">Nama Budaya Kerja</h2>
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control @error('nama_budaya_kerja') is-invalid @enderror"
                             name="nama_budaya_kerja" id="nama_budaya_kerja" placeholder="Nama Budaya Kerja"
-                            value="{{ old('nama_budaya_kerja') }}" data-bs-toggle="tooltip" data-bs-placement="top"
-                            data-bs-content="Uraikan latar belakang pembentukan budaya kerja, kesesuaian latar belakang dengan akronim BerAKHLAK yang dipilih. max: 400 kata" />
-
+                            value="{{ old('nama_budaya_kerja') }}" />
                         @error('nama_budaya_kerja')
                             <div class="invalid-feedback">
-                                Kolom wajib di isi.
+                                Nama wajib di isi.
                             </div>
                         @enderror
                         <label>Nama Budaya Kerja</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input class="form-control @error('path') is-invalid @enderror" type="text" name="path"
-                            id="path" placeholder="Path" value="{{ old('path') }}" />
+                        <input class="form-control @error('path') is-invalid @enderror" type="hidden" name="path"
+                            id="path" value="{{ old('path') }}" readonly />
                         @error('path')
                             <div class="invalid-feedback">
                                 Kolom wajib di isi.
                             </div>
                         @enderror
-                        <label>Path</label>
                     </div>
+                    <h2 class="small-title">Kategori Penguatan</h2>
                     <div class="form-floating mb-3 w-100">
                         <select class="form-control @error('{{ $k->id_kategori }}') is-invalid @enderror" name="id_kategori"
                             id="select2FloatingLabel">
@@ -56,177 +72,157 @@
                         @enderror
                         <label>Kategori Penguatan</label>
                     </div>
-                    <button type="button" class="btn btn-sm btn-icon btn-icon-only btn-background hover-outline mb-1"
-                        data-bs-toggle="tooltip" data-bs-placement="top"
-                        title="Uraikan latar belakang pembentukan budaya
-                    kerja, kesesuaian
-                    latar belakang dengan akronim BerAKHLAK yang dipilih. max: 400 kata.">
-                        <i data-acorn-icon="info-circle"></i>
-                    </button>
                     <div class="form-floating mb-3">
-                        <textarea class="form-control @error('latar_belakang') is-invalid @enderror" rows="3" type="text"
-                            name="latar_belakang" id="latar_belakang" value="{{ old('latar_belakang') }}"></textarea>
+                        <i class="d-inline mb-1" data-acorn-icon="info-circle" data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            title="Jelaskan Latar Belakang pembentukan budaya kerja. max: 400 kata."></i>
+                        <h2 class="d-inline mb-1 small-title">Latar Belakang</h2>
+                        <input type="hidden" name="latar_belakang">
                         @error('latar_belakang')
-                            <div class="invalid-feedback">
-                                Kolom wajib di isi.
-                            </div>
+                            <span class="text-danger">{{ $message }}</span>
                         @enderror
-                        <label>Latar Belakang</label>
+                        <h6 class="d-inline " id="counter">0 / 400 Kata</h6>
+                        <div class="html-editor sh-55" id="editor">{!! old('latar_belakang') !!}</div>
                     </div>
-                    <button type="button" class="btn btn-sm btn-icon btn-icon-only btn-background hover-outline mb-1"
-                        data-bs-toggle="tooltip" data-bs-placement="top"
-                        title="Jelaskan secara singkat tujuan pembentukan budaya kerja. max: 200 kata.">
-                        <i data-acorn-icon="info-circle"></i>
-                    </button>
-                    <div class="form-floating mb-3">
-                        <textarea class="form-control @error('tujuan') is-invalid @enderror" rows="3" type="text" name="tujuan"
-                            id="tujuan" value="{{ old('tujuan') }}"></textarea>
-                        @error('tujuan')
-                            <div class="invalid-feedback">
-                                Kolom wajib di isi.
+                    <div class="form-group">
+                        <div class="row g-2">
+                            <div class="col-md-4">
+                                <i class="d-inline mb-1" data-acorn-icon="info-circle" data-bs-toggle="tooltip"
+                                    data-bs-placement="top"
+                                    title="Jelaskan secara singkat sasaran pembentukan budaya kerja. max: 200 kata."></i>
+                                <h2 class="d-inline small-title">Sasaran</h2>
+                                <h6 id="counter1" class="d-inline">0 / 200 Kata</h6>
                             </div>
-                        @enderror
-                        <label>Tujuan</label>
-                    </div>
-                    <button type="button" class="btn btn-sm btn-icon btn-icon-only btn-background hover-outline mb-1"
-                        data-bs-toggle="tooltip" data-bs-placement="top"
-                        title="Berisi kondisi hasil perubahan yang diwujudkan. max: 150 kata.">
-                        <i data-acorn-icon="info-circle"></i>
-                    </button>
-                    <div class="form-floating mb-3">
-                        <textarea class="form-control @error('sasaran') is-invalid @enderror" rows="3" type="text" name="sasaran"
-                            id="sasaran" value="{{ old('sasaran') }}"></textarea>
-                        @error('sasaran')
-                            <div class="invalid-feedback">
-                                Kolom wajib di isi.
+                            <div class="col-md-4">
+                                <i class="d-inline mb-1" data-acorn-icon="info-circle" data-bs-toggle="tooltip"
+                                    data-bs-placement="top" title="Jelaskan Indikator kinerja. max: 150 kata."></i>
+                                <h2 class="d-inline small-title">Indikator Kinerja</h2>
+                                <h6 id="counter2" class="d-inline">0 / 150 Kata</h6>
                             </div>
-                        @enderror
-                        <label>Sasaran</label>
-                    </div>
-                    <button type="button" class="btn btn-sm btn-icon btn-icon-only btn-background hover-outline mb-1"
-                        data-bs-toggle="tooltip" data-bs-placement="top"
-                        title="Uraikan kondisi sebelum adanya budaya kerja. max: 200 kata">
-                        <i data-acorn-icon="info-circle"></i>
-                    </button>
-                    <div class="form-floating mb-3">
-                        <textarea class="form-control @error('kondisi_sebelum') is-invalid @enderror" rows="3" type="text"
-                            name="kondisi_sebelum" id="kondisi_sebelum" value="{{ old('kondisi_sebelum') }}"></textarea>
-                        @error('kondisi_sebelum')
-                            <div class="invalid-feedback">
-                                Kolom wajib di isi.
+                            <div class="col-md-4">
+                                <i class="d-inline mb-1" data-acorn-icon="info-circle" data-bs-toggle="tooltip"
+                                    data-bs-placement="top" title="Jelaskan target dari budaya kerja. max: 150 kata."></i>
+                                <h2 class="d-inline small-title">Target</h2>
+                                <h6 id="counter3" class="d-inline">0 / 150 Kata</h6>
                             </div>
-                        @enderror
-                        <label>Kondisi Sebelum</label>
-                    </div>
-                    <button type="button" class="btn btn-sm btn-icon btn-icon-only btn-background hover-outline mb-1"
-                        data-bs-toggle="tooltip" data-bs-placement="top"
-                        title="Jelaskan terkain pelaksanaan Budaya Kerja. max: 500 kata.">
-                        <i data-acorn-icon="info-circle"></i>
-                    </button>
-                    <div class="form-floating mb-3">
-                        <textarea class="form-control @error('implementasi') is-invalid @enderror" rows="3" type="text"
-                            name="implementasi" id="implementasi" value="{{ old('implementasi') }}"></textarea>
-                        @error('implementasi')
-                            <div class="invalid-feedback">
-                                Kolom wajib di isi.
+                            <div class="form-floating mb-3 col-md-4">
+                                <input type="hidden" name="sasaran">
+                                <div class="html-editor sh-25" id="editor1">{!! old('sasaran') !!}</div>
                             </div>
-                        @enderror
-                        <label>Implementasi</label>
-                    </div>
-                    <button type="button" class="btn btn-sm btn-icon btn-icon-only btn-background hover-outline mb-1"
-                        data-bs-toggle="tooltip" data-bs-placement="top"
-                        title="Uraian kondisi setelah adanya Budaya Kerja. max:200 kata">
-                        <i data-acorn-icon="info-circle"></i>
-                    </button>
-                    <div class="form-floating mb-3">
-                        <textarea class="form-control @error('kondisi_sesudah') is-invalid @enderror" rows="3" type="text"
-                            name="kondisi_sesudah" id="kondisi_sesudah" value="{{ old('kondisi_sesudah') }}"></textarea>
-                        @error('kondisi_sesudah')
-                            <div class="invalid-feedback">
-                                Kolom wajib di isi.
+                            <div class="form-floating mb-3 col-md-4">
+                                <input type="hidden" name="indikator_kinerja">
+                                <div class="html-editor sh-25" id="editor2">{!! old('indikator_kinerja') !!}</div>
                             </div>
-                        @enderror
-                        <label>Kondisi Sesudah</label>
-                    </div>
-                    <button type="button" class="btn btn-sm btn-icon btn-icon-only btn-background hover-outline mb-1"
-                        data-bs-toggle="tooltip" data-bs-placement="top"
-                        title="Jelaskan secara singkat manfaat yang didapatkan setelah adanya budaya kerja. max: 150 kata">
-                        <i data-acorn-icon="info-circle"></i>
-                    </button>
-                    <div class="form-floating mb-3">
-                        <textarea class="form-control @error('manfaat') is-invalid @enderror" rows="3" type="text" name="manfaat"
-                            id="manfaat" value="{{ old('manfaat') }}"></textarea>
-                        @error('manfaat')
-                            <div class="invalid-feedback">
-                                Kolom wajib di isi.
+                            <div class="form-floating mb-3 col-md-4">
+                                <input type="hidden" name="target">
+                                <div class="html-editor sh-25" id="editor3">{!! old('target') !!}</div>
                             </div>
-                        @enderror
-                        <label>Manfaat</label>
-                    </div>
-                    <button type="button" class="btn btn-sm btn-icon btn-icon-only btn-background hover-outline mb-1"
-                        data-bs-toggle="tooltip" data-bs-placement="top"
-                        title="Uraikan peranan aktif pimpinan dalam penerapan Budaya Kerja. max: 150 kata.">
-                        <i data-acorn-icon="info-circle"></i>
-                    </button>
-                    <div class="form-floating mb-3">
-                        <textarea class="form-control @error('peran_pimpinan') is-invalid @enderror" rows="3" type="text"
-                            name="peran_pimpinan" id="peran_pimpinan" value="{{ old('peran_pimpinan') }}"></textarea>
-                        @error('peran_pimpinan')
-                            <div class="invalid-feedback">
-                                Kolom wajib di isi.
+                        </div>
+                        <div class="row g-2">
+                            <div class="row g-2">
+                                <div class="col-md-6">
+                                    <i class="d-inline mb-1" data-acorn-icon="info-circle" data-bs-toggle="tooltip"
+                                        data-bs-placement="top"
+                                        title="Uraikan kondisi sebelum adanya budaya kerja. max: 200 kata">></i>
+                                    <h2 class="d-inline small-title">Kondisi sebelum</h2>
+                                    <h6 class="d-inline" id="counter4">0 / 200 Kata</h6>
+                                </div>
+                                <div class="col-md-6">
+                                    <i class="d-inline mb-1" data-acorn-icon="info-circle" data-bs-toggle="tooltip"
+                                        data-bs-placement="top"
+                                        title="Uraian kondisi setelah adanya Budaya Kerja. max:200 kata"></i>
+                                    <h2 class="d-inline small-title">Kondisi Sesudah</h2>
+                                    <h6 class="d-inline" id="counter6">0 / 200 Kata</h6>
+                                </div>
                             </div>
-                        @enderror
-                        <label>Peran Aktif Pimpinan</label>
-                    </div>
-                    <button type="button" class="btn btn-sm btn-icon btn-icon-only btn-background hover-outline mb-1"
-                        data-bs-toggle="tooltip" data-bs-placement="top"
-                        title="Jelaskan strategi yang dilakukan untuk keberlanjutan penerapan budaya kerja. max: 200 kata.">
-                        <i data-acorn-icon="info-circle"></i>
-                    </button>
-                    <div class="form-floating mb-3">
-                        <textarea class="form-control @error('monev') is-invalid @enderror" rows="3" type="text" name="monev"
-                            id="monev" value="{{ old('monev') }}"></textarea>
-                        @error('monev')
-                            <div class="invalid-feedback">
-                                Kolom wajib di isi.
+                            <div class="form-floating mb-3 col-md-6">
+                                <input type="hidden" name="kondisi_sebelum">
+                                <div class="html-editor sh-25" id="editor4">{!! old('kondisi_sebelum') !!}</div>
                             </div>
-                        @enderror
-                        <label>Monitoring & Evaluasi</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <textarea class="form-control @error('link') is-invalid @enderror" rows="3" type="text" name="link"
-                            id="link" value="{{ old('link') }}"></textarea>
-                        @error('link')
-                            <div class="invalid-feedback">
-                                Kolom wajib di isi.
+
+                            <div class="form-floating mb-3 col-md-6">
+                                <input type="hidden" name="kondisi_sesudah">
+                                <div class="html-editor sh-25" id="editor6">{!! old('kondisi_sesudah') !!}</div>
                             </div>
-                        @enderror
-                        <label>Link Youtube</label>
-                    </div>
-                    <button type="button" class="btn btn-sm btn-icon btn-icon-only btn-background hover-outline mb-1"
-                        data-bs-toggle="tooltip" data-bs-placement="top"
-                        title="Uraikan latar belakang pembentukan budaya
-                    kerja, kesesuaian
-                    latar belakang dengan akronim BerAKHLAK yang dipilih. max: 400 kata.">
-                        <i data-acorn-icon="info-circle"></i>
-                    </button>
-                    <div class="input-group mb-3">
-                        <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
-                            name="image" onchange="preview()">
-                        @error('image')
-                            <div class="invalid-feedback">
+                        </div>
+                        <div class="col">
+                            <i class="d-inline mb-1" data-acorn-icon="info-circle" data-bs-toggle="tooltip"
+                                data-bs-placement="top"
+                                title="Jelaskan implementasi terkait pelaksanaan Budaya Kerja. max: 500 kata."></i>
+                            <h2 class="d-inline small-title">Implementasi</h2>
+                            <h6 class="d-inline" id="counter5">0 / 500 Kata</h6>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="hidden" name="implementasi">
+                            <div class="html-editor sh-55" id="editor5">{!! old('implementasi') !!}</div>
+                        </div>
+                        <i class="d-inline mb-1" data-acorn-icon="info-circle" data-bs-toggle="tooltip"
+                            data-bs-placement="top" title="Jelaskan secara singkat kesimpulan. max: 150 kata"></i>
+                        <h2 class="d-inline small-title">Kesimpulan</h2>
+                        <h6 class="d-inline" id="counter7">0 / 150 Kata</h6>
+                        <div class="form-floating mb-3">
+                            <input type="hidden" name="kesimpulan">
+                            <div class="html-editor sh-25" id="editor7">{!! old('kesimpulan') !!}</div>
+                        </div>
+                        <div class="row g-2">
+                            <div class="col-md-6">
+                                <i data-acorn-icon="info-circle" class="d-inline mb-1" data-bs-toggle="tooltip"
+                                    data-bs-placement="top"
+                                    title="contoh format link : https://www.youtube.com/watch?v=iDvpyKtg1Ww)."></i>
+                                <h2 class="d-inline small-title">Link Youtube</h2>
                             </div>
-                        @enderror
-                        <label class="input-group-text" for="image">Upload</label>
-                    </div>
-                    <img class="img-preview img-fluid mb-3 col-sm-5">
-                    <button class="btn btn-primary" type="submit">Submit</button>
+                        </div>
+                        <div class="row g-2">
+                            <div class="form-floating mb-3 col-md-6">
+                                <input class="form-control @error('link') is-invalid @enderror" type="url"
+                                    name="link" id="link" value="{{ old('link') }}"
+                                    placeholder="Link Youtube">
+                                @error('link')
+                                    <div class="invalid-feedback">
+                                        Kolom wajib di isi.
+                                    </div>
+                                @enderror
+                                <label>Link Youtube</label>
+                            </div>
+                            {{-- <div class="input-group mb-3">
+                                <input type="file" class="form-control" id="nama_dokumentasi"
+                                name="nama_dokumentasi[]" onchange="preview()" multiple>
+                                @error('nama_dokumentasi')
+                                <div class="invalid-feedback">
+                                </div>
+                                @enderror
+                                <label class="input-group-text" for="nama_dokumentasi">Upload</label>
+                            </div> --}}
+                        </div>
+                        <div class="col-md-6">
+                            <i class="d-inline mb-1" data-acorn-icon="info-circle" data-bs-toggle="tooltip"
+                                data-bs-placement="top" title="Upload flyer budaya kerja"></i>
+                            <h2 class="d-inline small-title">Flyer/Poster</h2>
+                        </div>
+                        <div class="form-floating mb-3 col-md-6">
+                            <div class="input-group mb-3">
+                                <input type="file" class="form-control" id="image" name="image"
+                                    onchange="preview()">
+                                <label class="input-group-text" for="image">Upload</label>
+                            </div>
+                            <img class="img-preview img-fluid rounded mb-3 me-1 sh-19">
+                            @error('image')
+                                <div class="invalid-feedback">
+                                </div>
+                            @enderror
+                        </div>
+                        <button type="button" class="btn btn-background hover-outline mb-1"
+                            onclick="history.back(-1)">Cancel</button>
+                        <button class="btn btn-primary" type="submit">Submit</button>
                 </form>
             </div>
         </div>
     </section>
     <!-- Floating Label End -->
 
+
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src={{ asset('js/multi-quill.js') }}></script>
     <script>
         // auto isi dari nama_budaya_kerja
         const nama_budaya_kerja = document.querySelector("#nama_budaya_kerja");

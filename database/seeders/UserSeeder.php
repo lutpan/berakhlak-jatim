@@ -27,13 +27,19 @@ class UserSeeder extends Seeder
                     'name' => 'Biro Organisasi',
                     'id_level' => '2',
                     'username' => 'rorgan',
-                    'password' => Hash::make('rorgan'),
+                    'password' => Hash::make('berakhlak'),
                 ],
                 [
                     'name' => 'Kota Surabaya',
                     'id_level' => '2',
                     'username' => 'surabaya',
-                    'password' => Hash::make('surabaya'),
+                    'password' => Hash::make('berakhlak'),
+                ],
+                [
+                    'name' => 'Kabupaten Jombang',
+                    'id_level' => '2',
+                    'username' => 'kab_jombang',
+                    'password' => Hash::make('berakhlak'),
                 ]
             ];
 

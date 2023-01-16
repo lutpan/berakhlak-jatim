@@ -15,7 +15,7 @@
                         <!-- <img src="img/logo/logo-white.svg" alt="logo" /> -->
 
                         <!-- Or added via css to provide different ones for different color themes -->
-                        <div class="img"></div>
+                        {{-- <div class="img"></div> --}}
                     </a>
                 </div>
                 <!-- Logo End -->
@@ -25,7 +25,7 @@
                     <a href="#" class="d-flex user position-relative" data-bs-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         @if (Auth::user()->avatar)
-                            <img class="profile" alt="profile" src="{{ asset('storage/' . Auth::user()->avatar) }}" />
+                            <img class="profile" alt="profile" src="{{ asset(Auth::user()->avatar) }}" />
                         @else
                             <img class="profile" alt="profile" src="img/logo/logo-jatim.png" />
                         @endif
@@ -33,30 +33,8 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-end user-menu wide">
                         <div class="row mb-1 ms-0 me-0">
-                            <div class="col-6 ps-1 pe-1">
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <a href="#">
-                                            <i data-acorn-icon="help" class="me-2" data-acorn-size="17"></i>
-                                            <span class="align-middle">Help</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i data-acorn-icon="file-text" class="me-2" data-acorn-size="17"></i>
-                                            <span class="align-middle">Docs</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
                             <div class="col-6 pe-1 ps-1">
                                 <ul class="list-unstyled">
-                                    <li>
-                                        <a href="#">
-                                            <i data-acorn-icon="gear" class="me-2" data-acorn-size="17"></i>
-                                            <span class="align-middle">Settings</span>
-                                        </a>
-                                    </li>
                                     <li>
                                         <a href="{{ route('logout') }}">
                                             <i data-acorn-icon="logout" class="me-2" data-acorn-size="17"></i>
@@ -72,12 +50,12 @@
                 <!-- Icons Menu Start -->
                 {{-- {{ Auth::user()->name }} --}}
                 <ul class="list-unstyled list-inline text-center menu-icons">
-                    <li class="list-inline-item">
+                    {{-- <li class="list-inline-item">
                         <a href="#" id="pinButton" class="pin-button">
                             <i data-acorn-icon="lock-on" class="unpin" data-acorn-size="18"></i>
                             <i data-acorn-icon="lock-off" class="pin" data-acorn-size="18"></i>
                         </a>
-                    </li>
+                    </li> --}}
                     <li class="list-inline-item">
                         <a href="#" id="colorButton">
                             <i data-acorn-icon="light-on" class="light" data-acorn-size="18"></i>
@@ -93,33 +71,40 @@
                         {{-- {{ Auth::user()->username }} --}}
                         {{-- {{ Auth::id() }} --}}
                         <li>
-                            <a href="dashboard">
+                            <a href="{{ Route('dashboard') }}">
                                 <i data-acorn-icon="home" class="icon" data-acorn-size="18"></i>
-                                <span class="label">Dashboards</span>
+                                <span class="label">Beranda</span>
                             </a>
                         </li>
                         <li>
                             <a href="{{ Route('profile') }}">
                                 <i data-acorn-icon="user" class="icon" data-acorn-size="18"></i>
-                                <span class="label">Profile</span>
+                                <span class="label">Profil</span>
                             </a>
                         </li>
                         <li>
                             <a href="{{ Route('content.index') }}">
-                                <i data-acorn-icon="screen" class="icon" data-acorn-size="18"></i>
-                                <span class="label">Content</span>
+                                <i data-acorn-icon="clipboard" class="icon" data-acorn-size="18"></i>
+                                <span class="label">Proposal</span>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ Route('data') }}">
-                                <i data-acorn-icon="file-text" class="icon" data-acorn-size="18"></i>
-                                <span class="label">Data Dukung</span>
+                            <a href="{{ Route('password') }}">
+                                <i data-acorn-icon="slash" class="icon" data-acorn-size="18"></i>
+                                <span class="label">Reset Password</span>
                             </a>
                         </li>
-                        {{-- user --}}
+                        {{-- admin --}}
                         <li>
                             @can('admin')
-                                <h6 class="text-muted"><span>Administrator</span></h6>
+                                <span class="text-muted">Administrator</span>
+                            <li>
+                                <a href="{{ Route('indexDataAdmin') }}">
+                                    <i data-acorn-icon="file-text" class="icon" data-acorn-size="18"></i>
+                                    <span class="label">Data Dukung</span>
+                                </a>
+                            </li>
+                            <li>
                                 <a href="users">
                                     <i data-acorn-icon="user" class="icon" data-acorn-size="18"></i>
                                     <span class="label">Users</span>
@@ -129,6 +114,18 @@
                                 <a href="kategori">
                                     <i data-acorn-icon="list" class="icon" data-acorn-size="18"></i>
                                     <span class="label">Kategori</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('slider.index') }}">
+                                    <i data-acorn-icon="image" class="icon" data-acorn-size="18"></i>
+                                    <span class="label">Slider</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ Route('news.index') }}">
+                                    <i data-acorn-icon="news" class="icon" data-acorn-size="18"></i>
+                                    <span class="label">Berita</span>
                                 </a>
                             </li>
                         @endcan

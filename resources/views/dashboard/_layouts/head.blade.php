@@ -5,7 +5,7 @@
     <meta name="description"
         content="A vertical menu that newer shows larger pinned version and switches between mobile view and semi-hidden view." />
     <!-- Favicon Tags Start -->
-    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="img/favicon/apple-touch-icon-57x57.png" />
+    {{-- <link rel="apple-touch-icon-precomposed" sizes="57x57" href="img/favicon/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png" />
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png" />
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/favicon/apple-touch-icon-144x144.png" />
@@ -24,7 +24,7 @@
     <meta name="msapplication-square70x70logo" content="img/favicon/mstile-70x70.png" />
     <meta name="msapplication-square150x150logo" content="img/favicon/mstile-150x150.png" />
     <meta name="msapplication-wide310x150logo" content="img/favicon/mstile-310x150.png" />
-    <meta name="msapplication-square310x310logo" content="img/favicon/mstile-310x310.png" />
+    <meta name="msapplication-square310x310logo" content="img/favicon/mstile-310x310.png" /> --}}
     <!-- Favicon Tags End -->
     <!-- Font Tags Start -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -36,13 +36,14 @@
     <link rel="stylesheet" href="{{ asset('css/vendor/introjs.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/vendor/plyr.css') }}">
     <link rel="stylesheet" href="{{ asset('css/vendor/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{{ asset('css/vendor/OverlayScrollbars.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/vendor/datatables.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/vendor/glide.core.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/vendor/baguetteBox.min.css') }}">
-    {{-- <link rel="stylesheet" href="{{ asset('css/vendor/dropzone.min.css') }}"> --}}
-    {{-- <link rel="stylesheet" href="{{ asset('css/vendor/quill.bubble.css') }}" /> --}}
-    {{-- <link rel="stylesheet" href="{{ asset('css/vendor/quill.snow.css') }}" /> --}}
+    <link rel="stylesheet" href="{{ asset('css/vendor/dropzone.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/vendor/quill.bubble.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/vendor/quill.snow.css') }}" />
     <!-- Vendor Styles End -->
     <!-- Template Base Styles Start -->
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}" />

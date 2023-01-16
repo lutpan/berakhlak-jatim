@@ -610,7 +610,7 @@ class Nav {
         if (this.behaviourStatus !== 1) {
           // A small fix to make sure nav config at Vertical No Semi Hidden overrides theme settings.
           if (this.verticalUnpinned !== this.verticalMobile) {
-            this.html.setAttribute('data-behaviour', 'unpinned');
+            this.html.setAttribute('data-behaviour', 'pinned');
           } else {
             this.html.setAttribute('data-behaviour', 'pinned');
           }
@@ -621,8 +621,8 @@ class Nav {
       } else {
         // Tablet
         if (this.behaviourStatus !== 2) {
-          this.html.setAttribute('data-behaviour', 'unpinned');
-          this._disablePinButton();
+          this.html.setAttribute('data-behaviour', 'pinned');
+          this._enablePinButton();
           this.behaviourStatus = 2;
           this._hideShowMenu();
         }
@@ -640,8 +640,8 @@ class Nav {
       } else {
         // Tablet
         if (this.behaviourStatus !== 4) {
-          this.html.setAttribute('data-behaviour', 'unpinned');
-          this._disablePinButton();
+          this.html.setAttribute('data-behaviour', 'pinned');
+          this._enablePinButton();
           this.behaviourStatus = 4;
           this._hideShowMenu();
         }

@@ -335,12 +335,27 @@ class Scripts {
     }
   }
 
-  // Settings initialization
+  // Settings initialization untuk ubah tampilan
+  // _initSettings() {
+  //   if (typeof Settings !== 'undefined') {
+  //     const settings = new Settings({
+  //       attributes: { placement: 'vertical', color: 'light-red' },
+  //       showSettings: true,
+  //       storagePrefix: 'berakhlak-jatim'
+  //     });
+  //   }
+  // }
+
   _initSettings() {
     if (typeof Settings !== 'undefined') {
-      const settings = new Settings({attributes: {placement: 'horizontal'}, showSettings: true, storagePrefix: 'acorn-classic-dashboard-'});
+      const settings = new Settings({
+        attributes: { placement: 'horizontal', color: 'light-red' },
+        showSettings: false,
+        storagePrefix: 'acorn-starter-project-'
+      });
     }
   }
+
 
   // Variables initialization of Globals.js file which contains valus from css
   _initVariables() {

@@ -13,9 +13,9 @@
     <script src="{{ asset('js/vendor/dropzone.min.js') }}"></script>
     <script src="{{ asset('js/vendor/singleimageupload.js') }}"></script>
 
-    {{-- <script src="{{ asset('js/vendor/quill.min.js') }}"></script>
+    <script src="{{ asset('js/vendor/quill.min.js') }}"></script>
 
-    <script src="{{ asset('js/vendor/quill.active.js') }}"></script> --}}
+    <script src="{{ asset('js/vendor/quill.active.js') }}"></script>
 
     <!-- Vendor Scripts End -->
 
@@ -25,11 +25,10 @@
     <script src="{{ asset('js/base/nav.js') }}"></script>
     <script src="{{ asset('js/base/search.js') }}"></script>
     <script src="{{ asset('js/base/settings.js') }}"></script>
-
-
     <!-- Template Base Scripts End -->
 
     <!-- Page Specific Scripts Start -->
+
     <script src="{{ asset('js/vendor/plyr.min.js') }}"></script>
     <script src="{{ asset('js/cs/dropzone.templates.js') }}"></script>
     <script src="{{ asset('js/forms/controls.dropzone.js') }}"></script>
@@ -41,6 +40,7 @@
     <script src="{{ asset('js/vendor/glide.min.js') }}"></script>
     <script src="{{ asset('js/vendor/baguetteBox.min.js') }}"></script>
     <script src="{{ asset('js/vendor/clamp.min.js') }}"></script>
+    <script src="{{ asset('js/forms/controls.editor.js') }}"></script>
     <script src="{{ asset('js/common.js') }}"></script>
     <script src="{{ asset('js/scripts.js') }}"></script>
     <!-- Page Specific Scripts End -->

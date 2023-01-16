@@ -63,7 +63,6 @@
                             <th class="text-muted text-small text-uppercase">OPD/Kabupaten/Kota</th>
                             {{-- <th class="text-muted text-small text-uppercase">Walikota/Bupati/Kepala Dinas</th> --}}
                             <th class="text-muted text-small text-uppercase">Username</th>
-                            <th class="text-muted text-small text-uppercase">Password</th>
                             <th class="text-muted text-small text-uppercase">Level User</th>
                             <th class="text-muted text-small text-uppercase">Aksi</th>
 
@@ -74,11 +73,10 @@
                             <tr>
                                 <td>{{ $u->name }}</td>
                                 <td class="text-alternate">{{ $u->username }}</td>
-                                <td class="text-alternate">{{ $u->password }}</td>
-                                <td class="text-alternate">{{ $u->id_level }}</td>
-                                <td class="text-alternate"> <a href='{{ url('/content/' . $u->id_user . '/edit/') }}'
+                                <td class="text-alternate">{{ $u->level->name }}</td>
+                                <td class="text-alternate"> <a href='{{ route('users.edit', $u->id_user) }}'
                                         class="btn btn-sm btn-icon btn-icon-only btn-outline-warning"><i
-                                            data-acorn-icon="edit"></i></a>
+                                            data-acorn-icon="edit" title="Tooltip on left"></i></a>
                                 </td>
                             </tr>
                         @endforeach
