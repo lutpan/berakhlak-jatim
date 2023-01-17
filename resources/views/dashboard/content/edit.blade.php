@@ -84,8 +84,9 @@
                         </div>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="hidden" name="latar_belakang" value="{{ $content->latar_belakang }}" readonly>
-                        <div class="html-editor sh-45" id="editor">{!! $content->latar_belakang !!}</div>
+                        <input type="hidden" name="latar_belakang"
+                            value="{{ old('latar_belakang', $content->latar_belakang) }}" readonly>
+                        <div class="html-editor sh-45" id="editor">{!! old('latar_belakang', $content->latar_belakang) !!}</div>
                     </div>
                     <div class="form-group">
                         <div class="row g-2">
@@ -118,18 +119,19 @@
                                 @enderror
                             </div>
                             <div class="form-floating mb-3 col-md-4">
-                                <input type="hidden" name="sasaran" value="{{ $content->sasaran }}">
+                                <input type="hidden" name="sasaran" value="{{ old('sasaran', $content->sasaran) }}">
                                 {{-- <input type="hidden" name="sasaran" value="{!! $content->sasaran !!}"> --}}
-                                <div class="html-editor sh-25" id="editor1">{!! $content->sasaran !!}</div>
+                                <div class="html-editor sh-25" id="editor1">{!! old('sasaran', $content->sasaran) !!}
+                                </div>
                             </div>
                             <div class="form-floating mb-3 col-md-4">
                                 <input type="hidden" name="indikator_kinerja"
-                                    value="{{ $content->indikator_kinerja }}">
-                                <div class="html-editor sh-25" id="editor2">{!! $content->indikator_kinerja !!}</div>
+                                    value="{{ old('indikator_kinerja', $content->indikator_kinerja) }}">
+                                <div class="html-editor sh-25" id="editor2">{!! old('indikator_kinerja', $content->indikator_kinerja) !!}</div>
                             </div>
                             <div class="form-floating mb-3 col-md-4">
-                                <input type="hidden" name="target" value="{{ $content->target }}">
-                                <div class="html-editor sh-25" id="editor3">{!! $content->target !!}</div>
+                                <input type="hidden" name="target" value="{{ old('target', $content->target) }}">
+                                <div class="html-editor sh-25" id="editor3">{!! old('target', $content->target) !!}</div>
                             </div>
                         </div>
                         {{-- <div class="row g-2"> --}}
@@ -147,8 +149,9 @@
 
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="hidden" name="kondisi_sebelum" value="{{ $content->kondisi_sebelum }}">
-                        <div class="html-editor sh-25" id="editor4">{!! $content->kondisi_sebelum !!}</div>
+                        <input type="hidden" name="kondisi_sebelum"
+                            value="{{ old('kondisi_sebelum', $content->kondisi_sebelum) }}">
+                        <div class="html-editor sh-25" id="editor4">{!! old('kondisi_sebelum', $content->kondisi_sebelum) !!}</div>
                     </div>
                     <div class="col-md-4">
                         <i class="d-inline" data-acorn-icon="info-circle" data-bs-toggle="tooltip"
@@ -161,8 +164,9 @@
                         @enderror
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="hidden" name="implementasi" value="{{ $content->implementasi }}">
-                        <div class="html-editor sh-55" id="editor5">{!! $content->implementasi !!}</div>
+                        <input type="hidden" name="implementasi"
+                            value="{{ old('implementasi', $content->implementasi) }}">
+                        <div class="html-editor sh-55" id="editor5">{!! old('implementasi', $content->implementasi) !!}</div>
                     </div>
                     <div class="form-floating mb-3">
                         {{-- <div class="col-md-4">  --}}
@@ -174,8 +178,9 @@
                             <h6 class="text" style="color: red">{{ $message }}</h6>
                         @enderror
                         {{-- </div>  --}}
-                        <input type="hidden" name="kondisi_sesudah" value="{{ $content->kondisi_sesudah }}">
-                        <div class="html-editor sh-25" id="editor6">{!! $content->kondisi_sesudah !!}</div>
+                        <input type="hidden" name="kondisi_sesudah"
+                            value="{{ old('kondisi_sesudah', $content->kondisi_sesudah) }}">
+                        <div class="html-editor sh-25" id="editor6">{!! old('kondisi_sesudah', $content->kondisi_sesudah) !!}</div>
                         {{-- </div> --}}
                         {{-- </div> --}}
                     </div>
@@ -188,8 +193,9 @@
                             <h6 class="text" style="color: red">{{ $message }}</h6>
                         @enderror
                         <div class="form-floating mb-3">
-                            <input type="hidden" name="kesimpulan" value="{{ $content->kesimpulan }}">
-                            <div class="html-editor sh-23" id="editor7">{!! $content->kesimpulan !!}</div>
+                            <input type="hidden" name="kesimpulan"
+                                value="{{ old('kesimpulan', $content->kesimpulan) }}">
+                            <div class="html-editor sh-23" id="editor7">{!! old('kesimpulan', $content->kesimpulan) !!}</div>
                         </div>
                     </div>
                     <div class="row g-2">

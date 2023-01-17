@@ -77,9 +77,18 @@
                             {!! $content->kesimpulan !!}
                         </p>
                         <h5 class="mb-3 mt-5 text-alternate">Video Dokumentasi Budaya Kerja</h5>
-                        <iframe width="720" height="480"
-                            src="{{ str_replace('watch?v=', 'embed/', $content->link) }}" class="responsive mb-3">
-                        </iframe>
+                        @if (strpos($content->link, '&'))
+                            <iframe width="720" height="480"
+                                {{ $variable = substr($content->link, 0, strpos($content->link, '&')) }}
+                                src="{{ str_replace('watch?v=', 'embed/', $variable) }}" class="responsive mb-3"
+                                allowfullscreen>
+                            </iframe>
+                        @else
+                            <iframe width="720" height="480"
+                                src="{{ str_replace('watch?v=', 'embed/', $content->link) }}" class="responsive mb-3"
+                                allowfullscreen>
+                            </iframe>
+                        @endif
                         <div class="card-footer border-0 pt-0">
                             <div class="row align-items-center">
 

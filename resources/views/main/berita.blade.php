@@ -93,7 +93,8 @@
                                 </div>
                                 <div class="blog-content wow fadeInUp delay-0-2s">
                                     <ul class="blog-meta">
-                                        <li><i class="far fa-calendar-alt"></i> <a href="#">7 Desember, 2022</a>
+                                        <li><i class="far fa-calendar-alt"></i> <a
+                                                href="#">{{ $news->tanggal_berita }}</a>
                                         </li>
                                     </ul>
                                     <h3>{{ $news->judul_berita }} </h3>
