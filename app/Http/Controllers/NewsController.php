@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Berita;
 use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -54,8 +55,14 @@ class NewsController extends Controller
             $validate['foto_berita'] = $request->file('foto_berita')->move('upload/foto_berita', $request->file('foto_berita')->getClientOriginalName());
         }
 
+
+        $p = $validate['path_berita'];
+        if (Berita::where('path_berita', $p)->fist() != null) {
+            return redirect()->back()->with('alert', 'data sudah ada');
+        } else {
+            News::create($validate);
+        };
         // ddd($validate);
-        News::create($validate);
 
         return redirect('/news')->with('success', 'Berhasil menyimpan data');
     }

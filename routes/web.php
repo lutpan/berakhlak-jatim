@@ -13,6 +13,7 @@ use App\Http\Controllers\UploadController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
+use App\Models\Kategori;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,5 +70,7 @@ Route::group(['middleware' => 'web'], function () {
     #Password
     Route::get('password', [UserController::class, 'password'])->name('password');
     Route::put('password/updatePassword/{id_user}', [UserController::class, 'updatePassword'])->name('updatePassword');
+    #kategori
+    Route::resource('kategori', Kategori::class);
   });
 });
