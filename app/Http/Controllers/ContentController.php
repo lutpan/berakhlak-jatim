@@ -217,16 +217,19 @@ class ContentController extends Controller
 
         // $content = Content::where('path', $path)->first();
         // ddd($content);
-        $validate = $request->validate([
-            'id_user' => 'nullable',
-            'id_content' => 'nullable',
-            'sk_tim' => 'nullable|file|mimes:pdf|max:2048',
-            'anggaran' => 'nullable|file|mimes:pdf|max:2048',
-            'sop' => 'nullable|file|mimes:pdf|max:2048',
-            'data_dukung_1' => 'nullable|file|mimes:pdf|max:2048',
-            'data_dukung_2' => 'nullable|file|mimes:pdf|max:2048'
-            // 'dok_pembangunan' => 'nullable|file|mimes:pdf|max:2048'
-        ]);
+        $validate = $request->validate(
+            [
+                'id_user' => 'nullable',
+                'id_content' => 'nullable',
+                'sk_tim' => 'nullable|file|mimes:pdf|max:2048',
+                'anggaran' => 'nullable|file|mimes:pdf|max:2048',
+                'sop' => 'nullable|file|mimes:pdf|max:2048',
+                'data_dukung_1' => 'nullable|file|mimes:pdf|max:2048',
+                'data_dukung_2' => 'nullable|file|mimes:pdf|max:2048'
+                // 'dok_pembangunan' => 'nullable|file|mimes:pdf|max:2048'
+            ],
+            ['max' => 'ukuran file harus dibawah 2mb']
+        );
 
         // if ($request->file(['sk-tim', 'anggaran', 'sop', 'dok-pembangunan', 'link'])) {
         //     $validate[['sk-tim', 'anggaran', 'sop', 'dok-pembangunan', 'link']] = $request->file(['sk-tim', 'anggaran', 'sop', 'dok-pembangunan', 'link'])->store('upload/data_dukung');
@@ -245,9 +248,13 @@ class ContentController extends Controller
             // $validate['sop'] = $request->file('sop')->store('upload/data_dukung');
             $validate['sop'] = $request->file('sop')->move('upload/data_dukung/sop', $request->file('sop')->getClientOriginalName());
         }
-        if ($request->file('dok_pembangunan')) {
-            // $validate['dok_pembangunan'] = $request->file('dok_pembangunan')->store('upload/data_dukung');
-            $validate['dok_pembangunan'] = $request->file('dok_pembangunan')->move('upload/data_dukung/dok_pembangunan', $request->file('dok_pembangunan')->getClientOriginalName());
+        if ($request->file('data_dukung_1')) {
+            // $validate['data_dukung_1'] = $request->file('data_dukung_1')->store('upload/data_dukung');
+            $validate['data_dukung_1'] = $request->file('data_dukung_1')->move('upload/data_dukung/data_dukung_1', $request->file('data_dukung_1')->getClientOriginalName());
+        }
+        if ($request->file('data_dukung_2')) {
+            // $validate['data_dukung_1'] = $request->file('data_dukung_1')->store('upload/data_dukung');
+            $validate['data_dukung_2'] = $request->file('data_dukung_2')->move('upload/data_dukung/data_dukung_2', $request->file('data_dukung_2')->getClientOriginalName());
         }
 
         // $validate['id_user'] = auth()->user()->id_user;
@@ -256,7 +263,7 @@ class ContentController extends Controller
             ->update($validate);
 
 
-        return redirect('/content')->with('success', 'Berhasil menyimpan data.');
+        return redirect('/content')->with('success', 'Berhasil menyimpan File.');
     }
 
     public function indexDataAdmin()

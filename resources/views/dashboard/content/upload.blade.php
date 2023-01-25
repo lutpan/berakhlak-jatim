@@ -42,7 +42,12 @@
                     <div class="mb-3 row">
                         <label class="col-lg-2 col-md-3 col-sm-4 col-form-label">SK Tim Penggerak Budaya Kerja</label>
                         <div class="col-sm-8 col-md-9 col-lg-10">
-                            <input type="file" class="form-control" id="sk_tim" name="sk_tim">
+                            <small> format : .pdf | max size : 2mb</small>
+                            <input type="file" class="form-control @error('sk_tim') is-invalid @enderror" id="sk_tim"
+                                accept=".pdf" name="sk_tim">
+                            @error('sk_tim')
+                                <div class="alert alert-danger col-md-3">{{ $message }}</div>
+                            @enderror
                             @if ($content->sk_tim)
                                 <a href="{{ asset($content->sk_tim) }}" target="_blank"><i data-acorn-icon="file-text"
                                         class="icon" data-acorn-size="18"></i>
@@ -56,7 +61,12 @@
                     <div class="mb-3 row">
                         <label class="col-lg-2 col-md-3 col-sm-4 col-form-label">Anggaran terkait Budaya Kerja</label>
                         <div class="col-sm-8 col-md-9 col-lg-10">
-                            <input type="file" class="form-control" id="anggaran" name="anggaran">
+                            <small> format : .pdf | max size : 2mb</small>
+                            <input type="file" class="form-control @error('anggaran') is-invalid @enderror"
+                                accept=".pdf" id="anggaran" name="anggaran">
+                            @error('anggaran')
+                                <div class="alert alert-danger col-md-3">{{ $message }}</div>
+                            @enderror
                             @if ($content->anggaran)
                                 <a href="{{ asset($content->anggaran) }}" target="_blank"><i data-acorn-icon="file-text"
                                         class="icon" data-acorn-size="18"></i>
@@ -70,7 +80,12 @@
                     <div class="mb-3 row">
                         <label class="col-lg-2 col-md-3 col-sm-4 col-form-label">SOP Budaya Kerja</label>
                         <div class="col-sm-8 col-md-9 col-lg-10">
-                            <input type="file" class="form-control" id="sop" name="sop">
+                            <small> format : .pdf | max size : 2mb</small>
+                            <input type="file" class="form-control @error('sop') is-invalid @enderror" accept=".pdf"
+                                id="sop" name="sop">
+                            @error('sop')
+                                <div class="alert alert-danger col-md-3">{{ $message }}</div>
+                            @enderror
                             @if ($content->sop)
                                 <a href="{{ asset($content->sop) }}" target="_blank"><i data-acorn-icon="file-text"
                                         class="icon" data-acorn-size="18"></i>
@@ -84,7 +99,12 @@
                     <div class="mb-3 row">
                         <label class="col-lg-2 col-md-3 col-sm-4 col-form-label">Dokumen Data dukung lainnya </label>
                         <div class="col-sm-8 col-md-9 col-lg-10">
-                            <input type="file" class="form-control" id="data_dukung_1" name="data_dukung_1">
+                            <small> format : .pdf | max size : 2mb</small>
+                            <input type="file" class="form-control @error('data_dukung_1') is-invalid @enderror"
+                                accept=".pdf" id="data_dukung_1" name="data_dukung_1">
+                            @error('data_dukung_1')
+                                <div class="alert alert-danger col-md-3">{{ $message }}</div>
+                            @enderror
                             @if ($content->data_dukung_1)
                                 <a href="{{ asset($content->data_dukung_1) }}" target="_blank"><i
                                         data-acorn-icon="file-text" class="icon" data-acorn-size="18"></i>
@@ -98,7 +118,12 @@
                     <div class="mb-3 row">
                         <label class="col-lg-2 col-md-3 col-sm-4 col-form-label">Dokumen Data Dukung Lainnya </label>
                         <div class="col-sm-8 col-md-9 col-lg-10">
-                            <input type="file" class="form-control" id="data_dukung_2" name="data_dukung_2">
+                            <small> format : .pdf | max size : 2mb</small>
+                            <input type="file" class="form-control @error('data_dukung_2') is-invalid @enderror"
+                                accept=".pdf" id="data_dukung_2" name="data_dukung_2">
+                            @error('data_dukung_2   ')
+                                <div class="alert alert-danger col-md-3">{{ $message }}</div>
+                            @enderror
                             @if ($content->data_dukung_2)
                                 <a href="{{ asset($content->data_dukung_2) }}" target="_blank"><i
                                         data-acorn-icon="file-text" class="icon" data-acorn-size="18"></i>
