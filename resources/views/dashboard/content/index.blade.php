@@ -41,7 +41,12 @@
                                 type="button" data-datatable="#datatablePagination">
                                 <i data-acorn-icon="print"></i>
                             </button>
+
                             <div class="d-inline-block datatable-export" data-datatable="#datatablePagination">
+                                <button class="btn btn-icon btn-icon-only btn-outline-muted btn-sm dropdown"
+                                    data-bs-toggle="dropdown" type="button" data-bs-offset="0,3">
+                                    <i data-acorn-icon="download"></i>
+                                </button>
                                 <div class="dropdown-menu dropdown-menu-sm dropdown-menu-end">
                                     <button class="dropdown-item export-copy" type="button">Copy</button>
                                     <button class="dropdown-item export-excel" type="button">Excel</button>
@@ -124,29 +129,29 @@
 
                                     {{-- <td class="text-alternate"> <a href='{{ route('users.edit', $content->id_user) }}'
                                     class="btn btn-sm btn-icon btn-icon-only btn-outline-warning"><i
-                                    data-acorn-icon="edit" title="Tooltip on left"></i></a>
-                                </td> --}}
+                                    data-acorn-icon="edit" title="Tooltip on left"></i></a> --}}
+                                </td>
 
-                                    <div class="modal fade" id="modal-{{ $content->id_content }}" tabindex="-1"
-                                        role="dialog" aria-hidden="true">
-                                        <div class="modal-dialog modal-xl">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title">{{ $content->nama_budaya_kerja }}</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    @include('dashboard.content.detail')
-                                                    {{-- cek --}}
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-bs-dismiss="modal">Close</button>
-                                                </div>
+                                <div class="modal fade" id="modal-{{ $content->id_content }}" tabindex="-1" role="dialog"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">{{ $content->nama_budaya_kerja }}</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                @include('dashboard.content.detail')
+                                                {{-- cek --}}
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
                                 </td>
                             </tr>
                         @endforeach
@@ -155,6 +160,8 @@
                 </table>
             </div>
         </div>
+
     </section>
+
     <!-- Striped Rows End -->
 @endsection
